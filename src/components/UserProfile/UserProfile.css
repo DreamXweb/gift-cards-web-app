@@ -1,0 +1,10 @@
+.user-profile {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 1527px;
+  overflow: hidden;
+  width: 1440px;
+}
+

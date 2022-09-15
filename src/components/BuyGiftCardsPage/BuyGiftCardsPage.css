@@ -1,0 +1,11 @@
+.buy-gift-cards-page {
+  align-items: flex-end;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 2170px;
+  overflow: hidden;
+  position: relative;
+  width: 1440px;
+}
+

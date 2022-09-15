@@ -1,0 +1,10 @@
+.frame-25 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  padding: 11.0px 0;
+  position: relative;
+  width: 575px;
+}
+

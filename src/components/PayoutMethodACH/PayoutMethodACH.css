@@ -1,0 +1,11 @@
+.payout-method-ach {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 1612px;
+  overflow: hidden;
+  position: relative;
+  width: 1440px;
+}
+

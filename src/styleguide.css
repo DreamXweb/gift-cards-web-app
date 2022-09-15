@@ -1,0 +1,40 @@
+:root { 
+  --athens-gray: #eaeef4;
+  --black: #000000;
+  --bon-jour: #e0e0e0;
+  --celeste: #cccccc;
+  --concrete: #f3f3f3;
+  --firefly: #0b2238;
+  --geyser: #d6e1e6;
+  --granite-gray: #696969;
+  --gray-nurse: #eaeaea;
+  --mako: #3e4954;
+  --mercury: #dfe3e8;
+  --mine-shaft: #333333;
+  --mist-gray: #c4c4c4;
+  --mist-gray-2: #c4c4c4b2;
+  --nobel: #b5b2b2;
+  --onyx: #393939;
+  --oslo-gray: #8e8e93;
+  --silver-chalice: #aeaeae;
+  --silver-sand: #c2c2c2;
+  --sonic-silver: #757575;
+  --sonic-silver-2: #737373;
+  --storm-dust: #636366;
+  --waterloo-: #7b838f;
+  --white: #ffffff;
+ 
+  --font-size-l: 18px;
+  --font-size-m: 16px;
+  --font-size-s: 14px;
+  --font-size-xl: 20px;
+  --font-size-xs: 12px;
+  --font-size-xxl: 22px;
+  --font-size-xxxl: 24px;
+ 
+  --font-family-inter: "Inter", Helvetica;
+  --font-family-mulish: "Mulish", Helvetica;
+  --font-family-poppins: "Poppins", Helvetica;
+  --font-family-sf_pro_text-bold: "SF Pro Text-Bold", Helvetica;
+  --font-family-spartan-regular: "Spartan-Regular", Helvetica;
+}
