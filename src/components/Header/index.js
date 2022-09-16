@@ -13,7 +13,7 @@ function Header(props) {
 
   return (
     <Header1 className={`header ${className || ""}`}>
-      <Cardsicle className="cardsicle-1">Cardsicle</Cardsicle>
+      <Cardsicle className="cardsicle-1">GiftCards</Cardsicle>
       <AboutUs className="about-us-1">About us</AboutUs>
       <RefundAndCancellationPolicy className="refund-and-cancellation-policy-1">
         Refund and Cancellation Policy

@@ -14,7 +14,7 @@ function Footer(props) {
   return (
     <Footer1 className={`footer ${className || ""}`}>
       <OverlapGroup13 className="overlap-group13">
-        <Cardsicle className="cardsicle-3">Cardsicle</Cardsicle>
+        <Cardsicle className="cardsicle-3">GiftCards</Cardsicle>
         <Group68 className="group-68-1">
           <Company className="company-1">Company</Company>
           <SellGiftCards className="sell-gift-cards-5">Sell Gift Cards</SellGiftCards>
@@ -37,7 +37,7 @@ function Footer(props) {
               <TermsConditions>Terms &amp; Conditions</TermsConditions>
             </FlexRow>
           </Group200>
-          <SupportCardsicleCom>support@cardsicle.com</SupportCardsicleCom>
+          <SupportCardsicleCom>support@giftcards.com</SupportCardsicleCom>
         </OverlapGroup>
       </OverlapGroup13>
     </Footer1>

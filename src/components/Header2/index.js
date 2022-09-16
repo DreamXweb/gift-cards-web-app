@@ -15,7 +15,7 @@ function Header2(props) {
   return (
     <Header className={`header-5 ${className || ""}`}>
       <FlexRow className="flex-row-7">
-        <Cardsicle className="cardsicle-2">Cardsicle</Cardsicle>
+        <Cardsicle className="cardsicle-2">GiftCards</Cardsicle>
         <AboutUs className="about-us-2">About us</AboutUs>
         <RefundAndCancellationPolicy className="refund-and-cancellation-policy-2">
           Refund and Cancellation Policy
