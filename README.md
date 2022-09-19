@@ -18,5 +18,5 @@ _There are only several samples of code to share a main idea of the app_
 ```
 cd package_code
 npm install
-npm start
+npm run start
 ```
