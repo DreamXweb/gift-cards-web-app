@@ -1,16 +1,48 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {
   InterMediumOnyx20px,
   InterMediumConcrete20px,
   Border1pxGraniteGray,
   InterBoldOnyx24px,
-  InterBlackOnyx30px,
+  InterBlackOnyx30px, InterNormalBlack18px, Border1pxOnyx, Border4pxWhite,
 } from "../../styledMixins";
+import {staticUrl} from "../../App";
 
+const loggedInPages = ['user-profile', 'my-orders', 'checkout-page', 'edit-profile'];
+
+const isLoggedIn = () => {
+  for (let page of loggedInPages) {
+    if (window.location.href.indexOf(page) !== -1) {
+      return true;
+    }
+  }
+  return false;
+}
 
 function Header2(props) {
   const { className } = props;
+
+  // TODO change it only in case of successful login
+  const [loggedIn] = useState(isLoggedIn());
+
+  const signUpLogInButtons = <>
+    <OverlapGroup className="overlap-group-8">
+      <SignUp className="sign-up-1">Sign Up</SignUp>
+    </OverlapGroup>
+    <OverlapGroup1 className="overlap-group1-3">
+      <LogIn className="log-in-1">Log In</LogIn>
+    </OverlapGroup1>
+  </>
+
+  const myProfileButtons = <>
+    <Placeholder className="placeholder-7" />
+    <OverlapGroup3>
+      <MyProfile>My Profile</MyProfile>
+      <MyOrders>My Orders</MyOrders>
+    </OverlapGroup3>
+    <IconoIrLogOut src={staticUrl + "/img/iconoir-log-out@2x.svg"} />
+  </>
 
   return (
     <Header className={`header-5 ${className || ""}`}>
@@ -21,12 +53,9 @@ function Header2(props) {
           Refund and Cancellation Policy
         </RefundAndCancellationPolicy>
         <FAQ className="faq-2">FAQ</FAQ>
-        <OverlapGroup className="overlap-group-8">
-          <SignUp className="sign-up-1">Sign Up</SignUp>
-        </OverlapGroup>
-        <OverlapGroup1 className="overlap-group1-3">
-          <LogIn className="log-in-1">Log In</LogIn>
-        </OverlapGroup1>
+
+        {loggedIn ? myProfileButtons : signUpLogInButtons}
+
       </FlexRow>
       <GiftCardsContainer className="gift-cards-container">
         <SellGiftCards className="sell-gift-cards-4">Sell Gift Cards</SellGiftCards>
@@ -35,6 +64,57 @@ function Header2(props) {
     </Header>
   );
 }
+
+const OverlapGroup3 = styled.div`
+  ${InterNormalBlack18px}
+  ${Border1pxOnyx}
+            position: absolute;
+  width: 110px;
+  top: 60px;
+  left: 1143px;
+  display: flex;
+  flex-direction: column;
+  padding: 9px;
+  align-items: flex-start;
+  min-height: 81px;
+  border-radius: 4px;
+`;
+
+const MyProfile = styled.div`
+  width: 89px;
+  margin-bottom: -3px;
+  min-height: 27px;
+  align-self: center;
+  margin-right: 1px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+`;
+
+const MyOrders = styled.div`
+  margin-bottom: -3px;
+  min-height: 27px;
+  margin-top: 7px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+`;
+
+const Placeholder = styled.div`
+  ${Border4pxWhite}
+  width: 58px;
+  height: 58px;
+  margin-left: 288px;
+  background-color: var(--mist-gray);
+  border-radius: 29px;
+`;
+
+const IconoIrLogOut = styled.img`
+  width: 27px;
+  height: 27px;
+  margin-left: 16px;
+  margin-bottom: 1px;
+`;
 
 const Header = styled.div`
   width: 1312px;
@@ -57,6 +137,7 @@ const FlexRow = styled.div`
   min-width: 1300px;
 `;
 
+// TODO cancel duplicated code
 const Cardsicle = styled.div`
   ${InterBlackOnyx30px}
   min-height: 36px;

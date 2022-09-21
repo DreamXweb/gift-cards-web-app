@@ -1,7 +1,6 @@
 import React from "react";
 import Icon from "../Icon";
 import Group8076 from "../Group8076";
-import Header from "../Header";
 import styled from "styled-components";
 import {
   InterNormalOnyx18px,
@@ -12,7 +11,6 @@ import {
   InterSemiBoldOnyx22px,
   InterSemiBoldOnyx20px,
   InterNormalSonicSilver16px,
-  InterBoldOnyx24px,
   InterNormalOnyx16px,
   InterSemiBoldWhite14px,
   InterNormalSilverSand16px,
@@ -25,6 +23,7 @@ import {
 } from "../../styledMixins";
 import "./ForgotPassword.css";
 import {staticUrl} from "../../App";
+import Header2 from "../Header2";
 
 function ForgotPassword(props) {
   const {
@@ -46,8 +45,6 @@ function ForgotPassword(props) {
     privacyPolicy,
     termsConditions,
     supportCardsicleCom,
-    sellGiftCards2,
-    buyGiftCards2,
     forgotYourPassword1,
     forgotYourPassword2,
     pleaseEnterYourEm,
@@ -103,9 +100,7 @@ function ForgotPassword(props) {
             </OverlapGroup>
           </OverlapGroup1>
           <Group8098 src={staticUrl + "/img/group-8098@2x.svg"} />
-          <SellGiftCards1>{sellGiftCards2}</SellGiftCards1>
-          <BuyGiftCards1>{buyGiftCards2}</BuyGiftCards1>
-          <Header />
+          <Header2 />
           <ForgotYourPassword>{forgotYourPassword1}</ForgotYourPassword>
           <Rectangle360 />
           <OverlapGroup2>
@@ -380,24 +375,6 @@ const Group8098 = styled.img`
   height: 7px;
   top: 445px;
   left: 196px;
-`;
-
-const SellGiftCards1 = styled.div`
-  ${InterBoldOnyx24px}
-  position: absolute;
-  width: 169px;
-  top: 159px;
-  left: 524px;
-  letter-spacing: 0;
-`;
-
-const BuyGiftCards1 = styled.div`
-  ${InterBoldOnyx24px}
-  position: absolute;
-  width: 173px;
-  top: 159px;
-  left: 743px;
-  letter-spacing: 0;
 `;
 
 const ForgotYourPassword = styled.div`

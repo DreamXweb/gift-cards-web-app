@@ -1,5 +1,4 @@
 import React from "react";
-import Header3 from "../Header3";
 import Group8115 from "../Group8115";
 import styled from "styled-components";
 import {
@@ -21,6 +20,7 @@ import {
 } from "../../styledMixins";
 import "./EditProfile.css";
 import {staticUrl} from "../../App";
+import Header2 from "../Header2";
 
 function EditProfile(props) {
   const {
@@ -58,14 +58,13 @@ function EditProfile(props) {
     privacyPolicy,
     termsConditions,
     supportCardsicleCom,
-    header3Props,
     group8115Props,
   } = props;
 
   return (
     <div className="container-center-horizontal">
       <div className="edit-profile screen">
-        <Header3 className={header3Props.className} />
+        <Header2 />
         <FlexRow>
           <FlexCol>
             <OverlapGroup10>

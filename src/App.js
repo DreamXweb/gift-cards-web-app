@@ -15,7 +15,6 @@ import EditProfile from "./components/EditProfile";
 import BuyGiftCardsPage from "./components/BuyGiftCardsPage";
 import CheckoutPage from "./components/CheckoutPage";
 import SellGiftCardsPage from "./components/SellGiftCardsPage";
-import Frame25 from "./components/Frame25";
 import packageJson from '../package.json';
 
 export const staticUrl = 'https://dreamxweb.com/cardsicle/static';
@@ -28,9 +27,11 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path={App.homepage + '/'}>
-                    <Route index element={<AccountRegistration {...accountRegistrationData} />} />
+                    <Route index element={<MainPage {...mainPageData} />} />
+                    <Route path={'registration'} element={<AccountRegistration {...accountRegistrationData} />} />
+
+                    {/* TODO it is modal window */}
                     <Route path={'forgot-password'} element={<ForgotPassword {...forgotPasswordData} />} />
-                    <Route path={'main-page'} element={<MainPage {...mainPageData} />} />
                     <Route path={'log-in'} element={<LogIn {...logInData} />} />
                     <Route path={'payout-method-ach'} element={<PayoutMethodACH {...payoutMethodACHData} />} />
                     <Route path={'payout-method-cryptocurrency'} element={<PayoutMethodCryptocurrency {...payoutMethodCryptocurrencyData} />} />
@@ -40,13 +41,6 @@ function App() {
                     <Route path={'buy-gift-cards-page'} element={<BuyGiftCardsPage {...buyGiftCardsPageData} />} />
                     <Route path={'checkout-page'} element={<CheckoutPage {...checkoutPageData} />} />
                     <Route path={'sell-gift-cards-page'} element={<SellGiftCardsPage {...sellGiftCardsPageData} />} />
-                    <Route path={'frame-25'} element={<Frame25
-                        byClickingConfirm="By Clicking “Confirm Payment” I agree to the companies term of services"
-                        frame141Props={frame25Data.frame141Props}
-                        frame142Props={frame25Data.frame142Props}
-                        frame51Props={frame25Data.frame51Props}
-                        frame52Props={frame25Data.frame52Props}
-                    />} />
                 </Route>
             </Routes>
         </BrowserRouter>
@@ -671,30 +665,5 @@ const sellGiftCardsPageData = {
     weAcceptGiftCards: "We accept gift cards from the coolest retailers. Browse our Available Cards page to find your unwanted or lightly used gift cards. Plus, check your card balance at the same time!",
     seeAvailableCards: "See Available Cards",
     footerProps: footer8Data,
-};
-
-const frame141Data = {
-    enterNameOnCard: "Enter Name on Card",
-};
-
-const frame142Data = {
-    enterNameOnCard: "Card Number",
-    className: "frame-13",
-};
-
-const frame51Data = {
-    expiration: "Expiration",
-};
-
-const frame52Data = {
-    expiration: "CVV",
-    className: "frame-6",
-};
-
-const frame25Data = {
-    frame141Props: frame141Data,
-    frame142Props: frame142Data,
-    frame51Props: frame51Data,
-    frame52Props: frame52Data,
 };
 

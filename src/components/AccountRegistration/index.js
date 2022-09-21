@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header";
 import Group80762 from "../Group80762";
 import styled from "styled-components";
 import {
@@ -11,16 +10,15 @@ import {
   InterNormalOnyx16px,
   ValignTextMiddle,
   InterSemiBoldOnyx20px,
-  InterBoldOnyx24px,
   InterBlackOnyx30px,
   InterSemiBoldWhite14px, InterNormalOnyx12px,
 } from "../../styledMixins";
 import "./AccountRegistration.css";
 import {staticUrl} from "../../App";
+import Header2 from "../Header2";
 
 function AccountRegistration(props) {
   const {
-    sellGiftCards1,
     accountRegistration,
     firstName,
     name,
@@ -31,7 +29,6 @@ function AccountRegistration(props) {
     password,
     confirmPassword,
     placeholder,
-    buyGiftCards1,
     byCreatingAnAccount,
     label,
     alreadyHaveAnAccount,
@@ -53,16 +50,14 @@ function AccountRegistration(props) {
     privacyPolicy,
     termsConditions,
     supportCardsicleCom,
-    headerProps,
   } = props;
 
   return (
     <div className="container-center-horizontal">
       <div className="account-registration screen">
-        <Header className={headerProps.className} />
+        <Header2 />
         <FlexRow>
           <FlexCol>
-            <SellGiftCards>{sellGiftCards1}</SellGiftCards>
             <AccountRegistration1>{accountRegistration}</AccountRegistration1>
             <Group8075>
               <FirstName>{firstName}</FirstName>
@@ -96,7 +91,6 @@ function AccountRegistration(props) {
             </GroupContainer>
           </FlexCol>
           <FlexCol1>
-            <BuyGiftCards>{buyGiftCards1}</BuyGiftCards>
             <ImagePlaceholder src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
           </FlexCol1>
         </FlexRow>
@@ -173,14 +167,6 @@ const FlexCol = styled.div`
   flex-direction: column;
   align-items: flex-start;
   min-height: 592px;
-`;
-
-const SellGiftCards = styled.div`
-  ${InterBoldOnyx24px}
-  width: 169px;
-  min-height: 29px;
-  align-self: flex-end;
-  letter-spacing: 0;
 `;
 
 const AccountRegistration1 = styled.div`
@@ -299,13 +285,6 @@ const FlexCol1 = styled.div`
   flex-direction: column;
   align-items: flex-start;
   min-height: 568px;
-`;
-
-const BuyGiftCards = styled.div`
-  ${InterBoldOnyx24px}
-  width: 173px;
-  min-height: 29px;
-  letter-spacing: 0;
 `;
 
 const ImagePlaceholder = styled.img`

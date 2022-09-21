@@ -1,13 +1,10 @@
 import React from "react";
-import Header3 from "../Header3";
 import Group8115 from "../Group8115";
 import styled from "styled-components";
 import {
   InterNormalWaterloo16px,
   InterMediumOnyx16px,
   InterBoldOnyx22px,
-  Border1pxOnyx,
-  InterNormalBlack18px,
   ValignTextMiddle,
   InterSemiBoldOnyx18px,
   InterSemiBoldBlack18px,
@@ -22,11 +19,10 @@ import {
 } from "../../styledMixins";
 import "./UserProfile.css";
 import {staticUrl} from "../../App";
+import Header2 from "../Header2";
 
 function UserProfile(props) {
   const {
-    myProfile1,
-    myOrders,
     name1,
     editProfile,
     myProfile2,
@@ -66,11 +62,7 @@ function UserProfile(props) {
     <div className="container-center-horizontal">
       <div className="user-profile screen">
         <OverlapGroup4>
-          <Header3 />
-          <OverlapGroup3>
-            <MyProfile>{myProfile1}</MyProfile>
-            <MyOrders>{myOrders}</MyOrders>
-          </OverlapGroup3>
+          <Header2 />
         </OverlapGroup4>
         <FlexRow>
           <FlexCol>
@@ -162,41 +154,6 @@ const OverlapGroup4 = styled.div`
   align-self: center;
   margin-top: 56px;
   margin-left: 12px;
-`;
-
-const OverlapGroup3 = styled.div`
-  ${InterNormalBlack18px}
-  ${Border1pxOnyx}
-            position: absolute;
-  width: 110px;
-  top: 60px;
-  left: 1143px;
-  display: flex;
-  flex-direction: column;
-  padding: 9px;
-  align-items: flex-start;
-  min-height: 81px;
-  border-radius: 4px;
-`;
-
-const MyProfile = styled.div`
-  width: 89px;
-  margin-bottom: -3px;
-  min-height: 27px;
-  align-self: center;
-  margin-right: 1px;
-  letter-spacing: 0;
-  line-height: 30px;
-  white-space: nowrap;
-`;
-
-const MyOrders = styled.div`
-  margin-bottom: -3px;
-  min-height: 27px;
-  margin-top: 7px;
-  letter-spacing: 0;
-  line-height: 30px;
-  white-space: nowrap;
 `;
 
 const FlexRow = styled.div`

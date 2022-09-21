@@ -1,5 +1,4 @@
 import React from "react";
-import Header3 from "../Header3";
 import Footer from "../Footer";
 import styled from "styled-components";
 import {
@@ -17,6 +16,7 @@ import {
 } from "../../styledMixins";
 import "./CheckoutPage.css";
 import {staticUrl} from "../../App";
+import Header2 from "../Header2";
 
 function CheckoutPage(props) {
   const {
@@ -52,7 +52,6 @@ function CheckoutPage(props) {
     cvc2,
     label1,
     label2,
-    header3Props,
     footerProps,
   } = props;
 
@@ -60,7 +59,7 @@ function CheckoutPage(props) {
     <div className="container-center-horizontal">
       <div className="checkout-page screen">
         <FlexCol>
-          <Header3 className={header3Props.className} />
+          <Header2 />
           <FlexRow>
             <FlexCol1>
               <Checkout>{checkout}</Checkout>

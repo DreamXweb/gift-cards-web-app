@@ -81,8 +81,6 @@ function BuyGiftCardsPage(props) {
     x95Payout6,
     x95Payout7,
     x95Payout8,
-    header2Props,
-    rightThumbProps,
     pageActiveProps,
     pageDefault1Props,
     pageDefault2Props,
@@ -96,7 +94,7 @@ function BuyGiftCardsPage(props) {
     <div className="container-center-horizontal">
       <div className="buy-gift-cards-page screen">
         <FlexCol>
-          <Header2 className={header2Props.className} />
+          <Header2 />
           <FlexRow>
             <FlexCol1>
               <Rectangle343 />

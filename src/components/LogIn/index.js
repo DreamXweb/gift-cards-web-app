@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header";
 import Icon from "../Icon";
 import Group8076 from "../Group8076";
 import Footer from "../Footer";
@@ -10,24 +9,21 @@ import {
   InterBoldMineShaft22px,
   InterNormalSonicSilver16px,
   InterSemiBoldWhite14px,
-  InterBoldOnyx24px,
   InterSemiBoldOnyx14px,
   ValignTextMiddle,
 } from "../../styledMixins";
 import "./LogIn.css";
 import {staticUrl} from "../../App";
+import Header2 from "../Header2";
 
 function LogIn(props) {
   const {
-    sellGiftCards,
     logInToYourAccount,
     byLogInAnAccount,
     label1,
     label2,
     dontHaveAnAccount,
     forgottenPassword,
-    buyGiftCards,
-    headerProps,
     iconProps,
     group8076Props,
     footerProps,
@@ -36,10 +32,9 @@ function LogIn(props) {
   return (
     <div className="container-center-horizontal">
       <div className="log-in screen">
-        <Header className={headerProps.className} />
+        <Header2 />
         <FlexRow>
           <FlexCol>
-            <SellGiftCards>{sellGiftCards}</SellGiftCards>
             <LogInToYourAccount>{logInToYourAccount}</LogInToYourAccount>
             <OverlapGroup2>
               <FormElements>
@@ -62,7 +57,6 @@ function LogIn(props) {
             </OverlapGroup2>
           </FlexCol>
           <FlexCol1>
-            <BuyGiftCards>{buyGiftCards}</BuyGiftCards>
             <ImagePlaceholder src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
           </FlexCol1>
         </FlexRow>
@@ -87,14 +81,6 @@ const FlexCol = styled.div`
   flex-direction: column;
   align-items: flex-start;
   min-height: 657px;
-`;
-
-const SellGiftCards = styled.div`
-  ${InterBoldOnyx24px}
-  width: 169px;
-  min-height: 29px;
-  align-self: flex-end;
-  letter-spacing: 0;
 `;
 
 const LogInToYourAccount = styled.div`
@@ -222,13 +208,6 @@ const FlexCol1 = styled.div`
   flex-direction: column;
   align-items: flex-start;
   min-height: 568px;
-`;
-
-const BuyGiftCards = styled.div`
-  ${InterBoldOnyx24px}
-  width: 173px;
-  min-height: 29px;
-  letter-spacing: 0;
 `;
 
 const ImagePlaceholder = styled.img`

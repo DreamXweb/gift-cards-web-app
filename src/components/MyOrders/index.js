@@ -1,5 +1,4 @@
 import React from "react";
-import Header3 from "../Header3";
 import Footer from "../Footer";
 import styled from "styled-components";
 import {
@@ -16,6 +15,7 @@ import {
 } from "../../styledMixins";
 import "./MyOrders.css";
 import {staticUrl} from "../../App";
+import Header2 from "../Header2";
 
 function MyOrders(props) {
   const {
@@ -59,14 +59,13 @@ function MyOrders(props) {
     eastBay,
     name,
     loadMore,
-    header3Props,
     footerProps,
   } = props;
 
   return (
     <div className="container-center-horizontal">
       <div className="my-orders screen">
-        <Header3 className={header3Props.className} />
+        <Header2 />
         <FlexRow>
           <Total25Orders>{total25Orders}</Total25Orders>
           <SortBy>
