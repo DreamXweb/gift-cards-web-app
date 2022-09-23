@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { Border2pxStormDust } from "../../styledMixins";
 
 
-function RadioButton(props) {
-  const { className } = props;
-
-  return (
-    <RadioButton1 className={`radio-button ${className || ""}`}>
-      <Container className="container" />
-    </RadioButton1>
-  );
+function RadioButton ({ className, onClick }) {
+    return (
+        <RadioButton1 onClick={onClick} className={`radio-button ${className || ""}`}>
+            <Container className="container" />
+        </RadioButton1>
+    );
 }
 
 const RadioButton1 = styled.div`
@@ -22,6 +21,7 @@ const RadioButton1 = styled.div`
   align-items: center;
   min-width: 24px;
   border-radius: 10px;
+  cursor: pointer;
 
   &.radio-button.radio-button-1 {
     top: 185px;
@@ -41,6 +41,7 @@ const RadioButton1 = styled.div`
 `;
 
 const Container = styled.div`
+  ${Border2pxStormDust}
   width: 20px;
   height: 20px;
   border-radius: 10px;

@@ -3,19 +3,17 @@ import Group80762 from "../Group80762";
 import styled from "styled-components";
 import {
   InterNormalSilverSand16px,
-  InterNormalWaterloo16px,
   InterMediumOnyx16px,
   Border1pxCeleste,
   InterBoldMineShaft22px,
   InterNormalOnyx16px,
   ValignTextMiddle,
-  InterSemiBoldOnyx20px,
-  InterBlackOnyx30px,
   InterSemiBoldWhite14px, InterNormalOnyx12px,
 } from "../../styledMixins";
 import "./AccountRegistration.css";
 import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import Header from "../Header";
+import Footer from "../Footer";
 
 function AccountRegistration(props) {
   const {
@@ -37,25 +35,12 @@ function AccountRegistration(props) {
     number1,
     number2,
     number3,
-    cardsicle,
-    company,
-    sellGiftCards2,
-    buyGiftCards2,
-    aboutUs,
-    refundAndCancellationPolicy,
-    faq,
-    partnersProgram,
-    contactingUs,
-    ifYouHaveAnyQues,
-    privacyPolicy,
-    termsConditions,
-    supportCardsicleCom,
   } = props;
 
   return (
     <div className="container-center-horizontal">
       <div className="account-registration screen">
-        <Header2 />
+        <Header />
         <FlexRow>
           <FlexCol>
             <AccountRegistration1>{accountRegistration}</AccountRegistration1>
@@ -122,29 +107,7 @@ function AccountRegistration(props) {
             </Group8078>
           </Group8080>
           <Rectangle75 />
-          <OverlapGroup3>
-            <Cardsicle>{cardsicle}</Cardsicle>
-            <Group68>
-              <Company>{company}</Company>
-              <SellGiftCards1>{sellGiftCards2}</SellGiftCards1>
-              <BuyGiftCards1>{buyGiftCards2}</BuyGiftCards1>
-              <BuyGiftCards1>{aboutUs}</BuyGiftCards1>
-              <RefundAndCancellationPolicy>{refundAndCancellationPolicy}</RefundAndCancellationPolicy>
-              <FAQ>{faq}</FAQ>
-              <FAQ>{partnersProgram}</FAQ>
-            </Group68>
-            <OverlapGroup5>
-              <Group200>
-                <Company>{contactingUs}</Company>
-                <IfYouHaveAnyQues>{ifYouHaveAnyQues}</IfYouHaveAnyQues>
-                <FlexRow2>
-                  <PrivacyPolicy>{privacyPolicy}</PrivacyPolicy>
-                  <TermsConditions>{termsConditions}</TermsConditions>
-                </FlexRow2>
-              </Group200>
-              <SupportCardsicleCom>{supportCardsicleCom}</SupportCardsicleCom>
-            </OverlapGroup5>
-          </OverlapGroup3>
+          <Footer marginTop={344} />
           <IcChevron src={staticUrl + "/img/ic-chevron-1@2x.svg"} />
         </OverlapGroup4>
       </div>
@@ -477,139 +440,6 @@ const Rectangle75 = styled.div`
   left: 196px;
   background-color: var(--celeste);
   border-radius: 4px;
-`;
-
-const OverlapGroup3 = styled.div`
-  position: absolute;
-  height: 470px;
-  top: 438px;
-  left: 0;
-  display: flex;
-  padding: 0 165px;
-  align-items: center;
-  min-width: 1440px;
-  background-color: var(--gray-nurse);
-`;
-
-const Cardsicle = styled.div`
-  ${InterBlackOnyx30px}
-  min-height: 36px;
-  align-self: flex-start;
-  margin-top: 77px;
-  min-width: 161px;
-  letter-spacing: 2.1px;
-`;
-
-const Group68 = styled.div`
-  width: 166px;
-  margin-left: 269px;
-  margin-top: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 313px;
-`;
-
-const Company = styled.div`
-  ${InterSemiBoldOnyx20px}
-  min-height: 24px;
-  letter-spacing: 0;
-`;
-
-const SellGiftCards1 = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const BuyGiftCards1 = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 20px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const RefundAndCancellationPolicy = styled.div`
-  ${InterNormalWaterloo16px}
-  width: 152px;
-  min-height: 33px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const FAQ = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 19px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const OverlapGroup5 = styled.div`
-  width: 322px;
-  height: 313px;
-  position: relative;
-  margin-left: 186px;
-  margin-top: 3px;
-`;
-
-const Group200 = styled.div`
-  position: absolute;
-  width: 322px;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 313px;
-`;
-
-const IfYouHaveAnyQues = styled.p`
-  ${InterNormalWaterloo16px}
-  width: 314px;
-  min-height: 52px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-`;
-
-const FlexRow2 = styled.div`
-  ${InterNormalWaterloo16px}
-  height: 26px;
-  margin-top: 171px;
-  display: flex;
-  align-items: flex-start;
-  min-width: 296px;
-`;
-
-const PrivacyPolicy = styled.div`
-  min-height: 26px;
-  min-width: 105px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const TermsConditions = styled.div`
-  min-height: 26px;
-  margin-left: 35px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const SupportCardsicleCom = styled.div`
-  ${InterNormalOnyx16px}
-  position: absolute;
-  top: 136px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: 16px;
-  white-space: nowrap;
 `;
 
 const IcChevron = styled.img`

@@ -27,6 +27,19 @@ const Container1 = styled.div`
   &.container-1.container-2 {
     top: 187px;
   }
+  
+  &.container-1.container-3 {
+    top: 97px;
+  }
+  
+  &.container-1.container-4 {
+    top: 185px;
+  }
+  
+  &.container-1.container-5 {
+    top: 229px;
+  }
+  
 `;
 
 const Circle = styled.div`

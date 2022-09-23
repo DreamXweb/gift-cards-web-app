@@ -1,4 +1,4 @@
-import React from "react";
+import React, {createContext, useEffect, useState} from "react";
 
 // TODO kill the warning
 // noinspection ES6CheckImport
@@ -7,8 +7,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import MainPage from "./components/MainPage";
 import LogIn from "./components/LogIn";
 import AccountRegistration from "./components/AccountRegistration";
-import PayoutMethodACH from "./components/PayoutMethodACH";
-import PayoutMethodCryptocurrency from "./components/PayoutMethodCryptocurrency";
+import PayoutMethodContainer from "./components/PayoutMethod";
 import UserProfile from "./components/UserProfile";
 import MyOrders from "./components/MyOrders";
 import EditProfile from "./components/EditProfile";
@@ -16,40 +15,106 @@ import BuyGiftCardsPage from "./components/BuyGiftCardsPage";
 import CheckoutPage from "./components/CheckoutPage";
 import SellGiftCardsPage from "./components/SellGiftCardsPage";
 import packageJson from '../package.json';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import PartnersProgram from "./components/PartnersProgram";
+
+window.notify = (message) => toast(message);
 
 export const staticUrl = 'https://dreamxweb.com/cardsicle/static';
+
+export const MainContext = createContext(null);
 
 function App() {
 
     App.homepage = packageJson.homepage;
 
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path={App.homepage + '/'}>
-                    <Route index element={<MainPage {...mainPageData} />} />
-                    <Route path={'registration'} element={<AccountRegistration {...accountRegistrationData} />} />
+    // TODO save needed user data ...
+    const [loggedIn, setLoggedIn] = useState('true' === localStorage.getItem('loggedIn'));
 
-                    {/* TODO it is modal window */}
-                    <Route path={'forgot-password'} element={<ForgotPassword {...forgotPasswordData} />} />
-                    <Route path={'log-in'} element={<LogIn {...logInData} />} />
-                    <Route path={'payout-method-ach'} element={<PayoutMethodACH {...payoutMethodACHData} />} />
-                    <Route path={'payout-method-cryptocurrency'} element={<PayoutMethodCryptocurrency {...payoutMethodCryptocurrencyData} />} />
-                    <Route path={'user-profile'} element={<UserProfile {...userProfileData} />} />
-                    <Route path={'my-orders'} element={<MyOrders {...myOrdersData} />} />
-                    <Route path={'edit-profile'} element={<EditProfile {...editProfileData} />} />
-                    <Route path={'buy-gift-cards-page'} element={<BuyGiftCardsPage {...buyGiftCardsPageData} />} />
-                    <Route path={'checkout-page'} element={<CheckoutPage {...checkoutPageData} />} />
-                    <Route path={'sell-gift-cards-page'} element={<SellGiftCardsPage {...sellGiftCardsPageData} />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+    useEffect(() => {
+        localStorage.setItem('loggedIn', loggedIn + '')
+    }, [loggedIn]);
+
+    return (
+        <MainContext.Provider value={{loggedIn, setLoggedIn}}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path={App.homepage + '/'}>
+                        <Route index element={<MainPage {...mainPageData} />} />
+                        <Route path={'registration'} element={<AccountRegistration {...accountRegistrationData} />} />
+
+                        {/* TODO it is modal window */}
+                        <Route path={'forgot-password'} element={<ForgotPassword {...forgotPasswordData} />} />
+
+                        <Route path={'log-in'} element={<LogIn {...logInData} />} />
+                        <Route path={'payout-method'} element={<PayoutMethodContainer {...payoutMethodACHData} />} />
+
+                        <Route path={'user-profile'} element={<UserProfile {...userProfileData} />} />
+                        <Route path={'my-orders'} element={<MyOrders {...myOrdersData} />} />
+
+                        {/* TODO it is functionality of user-profile */}
+                        <Route path={'edit-profile'} element={<EditProfile {...editProfileData} />} />
+
+                        <Route path={'buy-gift-cards-page'} element={<BuyGiftCardsPage {...buyGiftCardsPageData} />} />
+                        <Route path={'checkout-page'} element={<CheckoutPage {...checkoutPageData} />} />
+                        <Route path={'sell-gift-cards-page'} element={<SellGiftCardsPage {...sellGiftCardsPageData} />} />
+
+                        <Route path={'partners-program'} element={<PartnersProgram {...partnersProgramData} />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+            <ToastContainer />
+        </MainContext.Provider>
     );
 }
 
 export default App;
 const icon2Data = {
     className: "icon-1",
+};
+
+const partnersProgramData = {
+    sellGiftCards1: "Sell Gift Cards",
+    buyGiftCards1: "Buy Gift Cards",
+    ifYouOrYourCompany: "If you or your company sells gift cards in bulk, we are interested in partnering with you",
+    benefitsOfPartnerProgram: "Benefits of Partner Program",
+    fasterPayout: "Faster Payout",
+    higherPercentages: "Higher Percentages",
+    priorityCustomerService: "Priority Customer Service",
+    applicationSubmission: "Application submission",
+    lastName: "Last Name",
+    surname: "Miller",
+    companyName: "Company Name",
+    enterCompanyName: "Enter Company Name",
+    address: "Address",
+    enterAddress: "Enter Address",
+    emailAddress: "Email Address",
+    yourNameEmailCom1: "yourname@email.com",
+    messageBox: "Message Box",
+    yourNameEmailCom2: "yourname@email.com",
+    phoneNumber: "Phone Number",
+    text1: "+123",
+    number1: "800",
+    number2: "9700",
+    number3: "2738",
+    whenApplyingYouAr: "When applying you are agreeing to our Terms and Conditions and Privacy Policy",
+    place: "SEND",
+    cardsicle: "Cardsicle",
+    company: "Company",
+    sellGiftCards2: "Sell Gift Cards",
+    buyGiftCards2: "Buy Gift Cards",
+    aboutUs: "About Us",
+    refundAndCancellationPolicy: "Refund and Cancellation Policy",
+    faq: "FAQ",
+    partnersProgram: "Partners Program",
+    career: "Career",
+    contactingUs: "Contacting us",
+    ifYouHaveAnyQues: "If you have any questions regarding this privacy policy you may contact us at:",
+    privacyPolicy: "Privacy Policy",
+    termsConditions: "Terms & Conditions",
+    supportCardsicleCom: "support@cardsicle.com",
+    group8080: "https://anima-uploads.s3.amazonaws.com/projects/62c832c763ed96b1e323f642/releases/62c834a54787cdaec3d8b7b7/img/vector@2x.png",
 };
 
 const forgotPasswordData = {
@@ -249,45 +314,6 @@ const payoutMethodACHData = {
     radioButton1Props: radioButton2Data,
     radioButton2Props: radioButton3Data,
     footerProps: footer3Data,
-};
-
-const header6Data = {
-    className: "header-4",
-};
-
-const radioButton5Data = {
-    className: "radio-button-4",
-};
-
-const container2Data = {
-    className: "container-2",
-};
-
-const radioButton6Data = {
-    className: "radio-button-5",
-};
-
-const footer4Data = {
-    className: "footer-3",
-};
-
-const payoutMethodCryptocurrencyData = {
-    sellGiftCards: "Sell Gift Cards",
-    usdt: "USDT",
-    ethereum: "Ethereum",
-    bitcoin: "Bitcoin",
-    place: "ACH",
-    cryptoAddress: "Crypto Address",
-    payoutMethod: "Payout method",
-    cryptoAccount: "Crypto Account",
-    verify: "Verify",
-    placeholder: "135790446578943",
-    buyGiftCards: "Buy Gift Cards",
-    headerProps: header6Data,
-    radioButton1Props: radioButton5Data,
-    containerProps: container2Data,
-    radioButton2Props: radioButton6Data,
-    footerProps: footer4Data,
 };
 
 const userProfileData = {

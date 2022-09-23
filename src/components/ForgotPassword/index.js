@@ -9,21 +9,18 @@ import {
   InterNormalOnyx12px,
   Border1pxOnyx,
   InterSemiBoldOnyx22px,
-  InterSemiBoldOnyx20px,
   InterNormalSonicSilver16px,
-  InterNormalOnyx16px,
   InterSemiBoldWhite14px,
   InterNormalSilverSand16px,
-  InterNormalWaterloo16px,
   InterMediumBlack12px,
   InterBoldMineShaft22px,
-  InterBlackOnyx30px,
   InterSemiBoldOnyx14px,
   ValignTextMiddle,
 } from "../../styledMixins";
 import "./ForgotPassword.css";
-import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import App, {staticUrl} from "../../App";
+import Header from "../Header";
+import Footer from "../Footer";
 
 function ForgotPassword(props) {
   const {
@@ -32,19 +29,6 @@ function ForgotPassword(props) {
     label2,
     dontHaveAnAccount,
     logInToYourAccount,
-    cardsicle,
-    company,
-    sellGiftCards1,
-    buyGiftCards1,
-    aboutUs,
-    refundAndCancellationPolicy,
-    faq,
-    partnersProgram,
-    contactingUs,
-    ifYouHaveAnyQues,
-    privacyPolicy,
-    termsConditions,
-    supportCardsicleCom,
     forgotYourPassword1,
     forgotYourPassword2,
     pleaseEnterYourEm,
@@ -56,71 +40,49 @@ function ForgotPassword(props) {
   } = props;
 
   return (
-    <div className="container-center-horizontal">
-      <div className="forgot-password screen">
-        <OverlapGroup3>
-          <ImagePlaceholder src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
-          <FormElements>
-            <Icon />
-            <FlexRow>
-              <Icon className={iconProps.className} />
-              <ByLogInAnAccount>{byLogInAnAccount}</ByLogInAnAccount>
-            </FlexRow>
-            <Button>
-              <Label>{label1}</Label>
-            </Button>
-            <Button1>
-              <Label1>{label2}</Label1>
-            </Button1>
-            <DontHaveAnAccount>{dontHaveAnAccount}</DontHaveAnAccount>
-          </FormElements>
-          <Group8076 />
-          <LogInToYourAccount>{logInToYourAccount}</LogInToYourAccount>
-          <OverlapGroup1>
-            <Cardsicle>{cardsicle}</Cardsicle>
-            <Group68>
-              <Company>{company}</Company>
-              <SellGiftCards>{sellGiftCards1}</SellGiftCards>
-              <BuyGiftCards>{buyGiftCards1}</BuyGiftCards>
-              <BuyGiftCards>{aboutUs}</BuyGiftCards>
-              <RefundAndCancellationPolicy>{refundAndCancellationPolicy}</RefundAndCancellationPolicy>
-              <FAQ>{faq}</FAQ>
-              <FAQ>{partnersProgram}</FAQ>
-            </Group68>
-            <OverlapGroup>
-              <Group200>
-                <Company>{contactingUs}</Company>
-                <IfYouHaveAnyQues>{ifYouHaveAnyQues}</IfYouHaveAnyQues>
-                <FlexRow1>
-                  <PrivacyPolicy>{privacyPolicy}</PrivacyPolicy>
-                  <TermsConditions>{termsConditions}</TermsConditions>
-                </FlexRow1>
-              </Group200>
-              <SupportCardsicleCom>{supportCardsicleCom}</SupportCardsicleCom>
-            </OverlapGroup>
-          </OverlapGroup1>
-          <Group8098 src={staticUrl + "/img/group-8098@2x.svg"} />
-          <Header2 />
-          <ForgotYourPassword>{forgotYourPassword1}</ForgotYourPassword>
-          <Rectangle360 />
-          <OverlapGroup2>
-            <ForgotYourPassword1>{forgotYourPassword2}</ForgotYourPassword1>
-            <PleaseEnterYourEm>{pleaseEnterYourEm}</PleaseEnterYourEm>
-            <EmailAddress>{emailAddress}</EmailAddress>
-            <OverlapGroup4>
-              <YourNameEmailCom>{yourNameEmailCom}</YourNameEmailCom>
-              <Rectangle72 />
-            </OverlapGroup4>
-            <Button2>
-              <Label2>{label3}</Label2>
-            </Button2>
-            <Button3>
-              <Label3>{label4}</Label3>
-            </Button3>
-          </OverlapGroup2>
-        </OverlapGroup3>
+      <div className="container-center-horizontal">
+        <div className="forgot-password screen">
+          <OverlapGroup3>
+            <ImagePlaceholder src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
+            <FormElements>
+              <Icon />
+              <FlexRow>
+                <Icon className={iconProps.className} />
+                <ByLogInAnAccount>{byLogInAnAccount}</ByLogInAnAccount>
+              </FlexRow>
+              <Button>
+                <Label>{label1}</Label>
+              </Button>
+              <Button1>
+                <Label1>{label2}</Label1>
+              </Button1>
+              <DontHaveAnAccount>{dontHaveAnAccount}</DontHaveAnAccount>
+            </FormElements>
+            <Group8076 />
+            <LogInToYourAccount>{logInToYourAccount}</LogInToYourAccount>
+            <Group8098 src={staticUrl + "/img/group-8098@2x.svg"} />
+            <Header />
+            <Footer marginTop={1044}/>
+            <ForgotYourPassword>{forgotYourPassword1}</ForgotYourPassword>
+            <Rectangle360 />
+            <OverlapGroup2>
+              <ForgotYourPassword1>{forgotYourPassword2}</ForgotYourPassword1>
+              <PleaseEnterYourEm>{pleaseEnterYourEm}</PleaseEnterYourEm>
+              <EmailAddress>{emailAddress}</EmailAddress>
+              <OverlapGroup4>
+                <YourNameEmailCom>{yourNameEmailCom}</YourNameEmailCom>
+                <Rectangle72 />
+              </OverlapGroup4>
+              <Button2>
+                <Label2>{label3}</Label2>
+              </Button2>
+              <Button3 onClick={() => window.location = App.homepage + '/log-in'}>
+                <Label3>{label4}</Label3>
+              </Button3>
+            </OverlapGroup2>
+          </OverlapGroup3>
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -233,140 +195,6 @@ const LogInToYourAccount = styled.div`
   top: 238px;
   left: 180px;
   letter-spacing: 0;
-`;
-
-const OverlapGroup1 = styled.div`
-  position: absolute;
-  height: 470px;
-  top: 1214px;
-  left: 0;
-  display: flex;
-  padding: 0 165px;
-  align-items: center;
-  min-width: 1440px;
-  background-color: var(--gray-nurse);
-`;
-
-// TODO cancel duplicated code
-const Cardsicle = styled.div`
-  ${InterBlackOnyx30px}
-  min-height: 36px;
-  align-self: flex-start;
-  margin-top: 77px;
-  min-width: 161px;
-  letter-spacing: 2.1px;
-`;
-
-const Group68 = styled.div`
-  width: 166px;
-  margin-left: 269px;
-  margin-top: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 313px;
-`;
-
-const Company = styled.div`
-  ${InterSemiBoldOnyx20px}
-  min-height: 24px;
-  letter-spacing: 0;
-`;
-
-const SellGiftCards = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const BuyGiftCards = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 20px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const RefundAndCancellationPolicy = styled.div`
-  ${InterNormalWaterloo16px}
-  width: 152px;
-  min-height: 33px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const FAQ = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 19px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const OverlapGroup = styled.div`
-  width: 322px;
-  height: 313px;
-  position: relative;
-  margin-left: 186px;
-  margin-top: 3px;
-`;
-
-const Group200 = styled.div`
-  position: absolute;
-  width: 322px;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 313px;
-`;
-
-const IfYouHaveAnyQues = styled.p`
-  ${InterNormalWaterloo16px}
-  width: 314px;
-  min-height: 52px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-`;
-
-const FlexRow1 = styled.div`
-  ${InterNormalWaterloo16px}
-  height: 26px;
-  margin-top: 171px;
-  display: flex;
-  align-items: flex-start;
-  min-width: 296px;
-`;
-
-const PrivacyPolicy = styled.div`
-  min-height: 26px;
-  min-width: 105px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const TermsConditions = styled.div`
-  min-height: 26px;
-  margin-left: 35px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const SupportCardsicleCom = styled.div`
-  ${InterNormalOnyx16px}
-  position: absolute;
-  top: 136px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: 16px;
-  white-space: nowrap;
 `;
 
 const Group8098 = styled.img`
@@ -510,6 +338,7 @@ const Button3 = styled.div`
   align-items: flex-start;
   min-width: 400px;
   border-radius: 12px;
+  cursor: pointer;
 `;
 
 export default ForgotPassword;

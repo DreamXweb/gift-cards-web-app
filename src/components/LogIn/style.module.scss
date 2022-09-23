@@ -1,0 +1,29 @@
+.input {
+    width: 400px;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 4px;
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    border-color: var(--silver-sand);
+    box-shadow: 0px 2px 2px 2px #cccccc1a;
+    padding: 16px;
+    border-width: 1px;
+}
+
+.input::placeholder {
+    color: var(--silver-sand);
+}
+
+.input.password-empty {
+    font-size: 40px;
+}
+
+#eye {
+    position: relative;
+    margin-bottom: -16px;
+    top: 19px;
+    left: 366px;
+    cursor: pointer;
+}

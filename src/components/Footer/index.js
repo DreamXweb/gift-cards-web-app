@@ -6,41 +6,39 @@ import {
   InterBlackOnyx30px,
   InterNormalOnyx16px,
 } from "../../styledMixins";
+import App from "../../App";
 
 
-function Footer(props) {
-  const { className } = props;
+function Footer({ className, marginTop }) {
 
   return (
-    <Footer1 className={`footer ${className || ""}`}>
-      <OverlapGroup13 className="overlap-group13">
-        <Cardsicle className="cardsicle-3">GiftCards</Cardsicle>
-        <Group68 className="group-68-1">
-          <Company className="company-1">Company</Company>
-          <SellGiftCards className="sell-gift-cards-5">Sell Gift Cards</SellGiftCards>
-          <BuyGiftCards className="buy-gift-cards-5">Buy Gift Cards</BuyGiftCards>
-          <BuyGiftCards className="about-us-3">About Us</BuyGiftCards>
-          <RefundAndCancellationPolicy className="refund-and-cancellation-policy-3">
-            Refund and Cancellation Policy
-          </RefundAndCancellationPolicy>
-          <FAQ className="faq-3">FAQ</FAQ>
-          <FAQ className="partners-program-1">Partners Program</FAQ>
-        </Group68>
-        <OverlapGroup className="overlap-group-9">
-          <Group200 className="group-200-1">
-            <Company className="contacting-us-1">Contacting us</Company>
-            <IfYouHaveAnyQues className="if-you-have-any-ques-1">
-              If you have any questions regarding this privacy policy you may contact us at:
-            </IfYouHaveAnyQues>
-            <FlexRow className="flex-row-8">
-              <PrivacyPolicy className="privacy-policy-1">Privacy Policy</PrivacyPolicy>
-              <TermsConditions>Terms &amp; Conditions</TermsConditions>
-            </FlexRow>
-          </Group200>
-          <SupportCardsicleCom>support@giftcards.com</SupportCardsicleCom>
-        </OverlapGroup>
-      </OverlapGroup13>
-    </Footer1>
+      <Footer1 className={`footer ${className || ""}`} style={top ? {marginTop: marginTop} : {}}>
+        <OverlapGroup13>
+          <Cardsicle>GiftCards</Cardsicle>
+          <Group68>
+            <Company>Company</Company>
+            <SellGiftCards>Sell Gift Cards</SellGiftCards>
+            <BuyGiftCards>Buy Gift Cards</BuyGiftCards>
+            <BuyGiftCards>About Us</BuyGiftCards>
+            <RefundAndCancellationPolicy>Refund and Cancellation Policy</RefundAndCancellationPolicy>
+            <FAQ onClick={() => window.notify('In development .. ')}>FAQ</FAQ>
+            <FAQ onClick={() => window.location = App.homepage + '/partners-program'}>Partners Program</FAQ>
+          </Group68>
+          <OverlapGroup>
+            <Group200>
+              <Company>Contacting us</Company>
+              <IfYouHaveAnyQues>
+                If you have any questions regarding this privacy policy you may contact us at:
+              </IfYouHaveAnyQues>
+              <FlexRow>
+                <PrivacyPolicy>Privacy Policy</PrivacyPolicy>
+                <TermsConditions>Terms &amp; Conditions</TermsConditions>
+              </FlexRow>
+            </Group200>
+            <SupportCardsicleCom>support@giftcards.com</SupportCardsicleCom>
+          </OverlapGroup>
+        </OverlapGroup13>
+      </Footer1>
   );
 }
 
@@ -149,6 +147,7 @@ const FAQ = styled.div`
   min-height: 19px;
   margin-top: 20px;
   letter-spacing: 0;
+  cursor: pointer;
 `;
 
 const OverlapGroup = styled.div`

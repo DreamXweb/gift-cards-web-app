@@ -1,5 +1,5 @@
 import React from "react";
-import Header2 from "../Header2";
+import Header from "../Header";
 import Card4 from "../Card4";
 import Footer from "../Footer";
 import styled from "styled-components";
@@ -76,166 +76,166 @@ function MainPage(props) {
   } = props;
 
   return (
-    <div className="container-center-horizontal">
-      <div className="main-page screen">
-        <Header2 />
-        <FlexRow>
-          <FlexCol>
-            <Title>{title}</Title>
-            <LoremIpsumDolorSi>{loremIpsumDolorSi}</LoremIpsumDolorSi>
-            <OverlapGroupContainer>
-              <OverlapGroup3>
-                <SellGiftCards>{sellGiftCards2}</SellGiftCards>
-              </OverlapGroup3>
-              <OverlapGroup2>
-                <BuyGiftCards>{signUp}</BuyGiftCards>
-              </OverlapGroup2>
-            </OverlapGroupContainer>
-          </FlexCol>
-          <ImagePlaceholder src={staticUrl + "/img/image-placeholder@1x.svg"} />
-        </FlexRow>
-        <OverlapGroup14>
-          <ByteSizeArrowBottom src={staticUrl + "/img/bytesize-arrow-bottom@2x.svg"} />
-          <ByteSizeArrowBottom1 src={staticUrl + "/img/bytesize-arrow-bottom@2x.svg"} />
-          <Group9>
-            <OverlapGroup12>
-              <Group6>
-                <SubmitYourGiftCard>{submitYourGiftCard}</SubmitYourGiftCard>
-                <Successful1 src={staticUrl + "/img/successful-1@2x.svg"} />
-              </Group6>
-              <Rectangle4 />
-            </OverlapGroup12>
-            <OverlapGroup11>
-              <Group7>
-                <GetAQuoteInstantly>{getAQuoteInstantly}</GetAQuoteInstantly>
-                <Label1 src={staticUrl + "/img/label-1@2x.svg"} />
-              </Group7>
-              <Rectangle4 />
-            </OverlapGroup11>
-            <OverlapGroup11>
-              <Group8>
-                <GetPaidInCrypto>{getPaidInCrypto}</GetPaidInCrypto>
-                <CurrencyExchange1 src={staticUrl + "/img/currency-exchange-1@2x.svg"} />
-              </Group8>
-              <Rectangle4 />
-            </OverlapGroup11>
-          </Group9>
-        </OverlapGroup14>
-        <GiftCardValueCalculator>{giftCardValueCalculator}</GiftCardValueCalculator>
-        <Group13>
-          <OverlapGroup4>
-            <OverlapGroup>
-              <Calculate>{calculate}</Calculate>
-            </OverlapGroup>
-            <OverlapGroup1>
-              <Proceed>{proceed}</Proceed>
-            </OverlapGroup1>
-            <SELLCARD>{sellCard}</SELLCARD>
-            <BUYCARD>{buyCard}</BUYCARD>
-            <Rectangle7 />
-            <OverlapGroup21>
-              <Line2 src={staticUrl + "/img/line-2@2x.svg"} />
-            </OverlapGroup21>
-            <Label>{label}</Label>
-            <Label2>{label2}</Label2>
-            <Label3>{label3}</Label3>
-            <Rectangle8 />
-            <Rectangle9 />
-            <Number>{number1}</Number>
-            <Cursor />
-            <IcSort src={staticUrl + "/img/ic-sort@2x.svg"} />
-            <Rectangle10 />
-            <IcChevron src={staticUrl + "/img/ic-chevron@2x.svg"} />
-            <AppleGiftCard>{appleGiftCard}</AppleGiftCard>
-            <Number1>{number2}</Number1>
-          </OverlapGroup4>
-        </Group13>
-        <OurValues>{ourValues}</OurValues>
-        <Group8081>
-          <Card1>
-            <VueSaxOutLineSecurity src={staticUrl + "/img/vuesax-outline-security@2x.svg"} />
-            <Security>{security}</Security>
-            <Rectangle342 />
-            <WeMonitorEachTran>{weMonitorEachTran}</WeMonitorEachTran>
-            <LearnMore>
-              <LoadMore>{cardsicle1}</LoadMore>
-              <Vector src={staticUrl + "/img/vector@2x.svg"} />
-            </LearnMore>
-          </Card1>
-          <Card4 service={card41Props.service} ourSimpleAndPractical={card41Props.ourSimpleAndPractical} />
-          <Card4
-            service={card42Props.service}
-            ourSimpleAndPractical={card42Props.ourSimpleAndPractical}
-            className={card42Props.className}
-          />
-        </Group8081>
-        <FlexRow1>
-          <ImagePlaceholder1 src={staticUrl + "/img/image-placeholder-2@1x.svg"} />
-          <Group8089>
-            <SwapYourGiftCardsForCash>{loadMore}</SwapYourGiftCardsForCash>
-            <SubmitYourGiftCar>{submitYourGiftCar}</SubmitYourGiftCar>
-            <OverlapGroup5>
-              <BuyGiftCards>{logIn}</BuyGiftCards>
-            </OverlapGroup5>
-          </Group8089>
-        </FlexRow1>
-        <FlexRow2>
-          <Group8090>
-            <BuyGiftCardsAndG>{swapYourGiftCardsForCash}</BuyGiftCardsAndG>
-            <BrowseYourFavorite>{browseYourFavorite}</BrowseYourFavorite>
-            <OverlapGroup6>
-              <SellGiftCards>{buyGiftCards3}</SellGiftCards>
-            </OverlapGroup6>
-          </Group8090>
-          <ImagePlaceholder2 src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
-        </FlexRow2>
-        <PopularRetailers>{popularRetailers}</PopularRetailers>
-        <FlexRow3>
-          <Vector1 src={staticUrl + "/img/vector-1@2x.svg"} />
-          <Group8085>
-            <Apple>{apple}</Apple>
-            <FlexCol1>
-              <OverlapGroup61>
-                <Amazon>{amazon}</Amazon>
-              </OverlapGroup61>
-              <Ellipse2 src={staticUrl + "/img/ellipse-2@2x.svg"} />
-            </FlexCol1>
-            <OverlapGroup8>
-              <Adidas>{adidas}</Adidas>
-            </OverlapGroup8>
-            <OverlapGroup51>
-              <AmericanExpress>{sellGiftCards3}</AmericanExpress>
-            </OverlapGroup51>
-            <OverlapGroup8>
-              <AirBnb>{airbnb}</AirBnb>
-            </OverlapGroup8>
-            <OverlapGroup7>
-              <Surname>{americanExpress}</Surname>
-            </OverlapGroup7>
-          </Group8085>
-          <Vector2 src={staticUrl + "/img/vector@2x.svg"} />
-        </FlexRow3>
-        <PayoutContainer>
-          <X80Payout>{sellGiftCards1}</X80Payout>
-          <X75Payout>{buyGiftCards1}</X75Payout>
-          <X60Payout>{aboutUs1}</X60Payout>
-          <X82Payout>{refundAndCancellationPolicy1}</X82Payout>
-          <X60Payout1>{faq1}</X60Payout1>
-          <X75Payout1>{x80Payout}</X75Payout1>
-        </PayoutContainer>
-        <FlexRow4>
-          <ImagePlaceholder1 src={staticUrl + "/img/image-placeholder-2@1x.svg"} />
-          <Group8088>
-            <SellGiftCardsOnlineFromTopBrands>{buyGiftCardsAndG}</SellGiftCardsOnlineFromTopBrands>
-            <WeAcceptGiftCards>{surname}</WeAcceptGiftCards>
-            <OverlapGroup9>
-              <SeeAvailableCards>{buyGiftCards2}</SeeAvailableCards>
-            </OverlapGroup9>
-          </Group8088>
-        </FlexRow4>
-        <Footer />
+      <div className="container-center-horizontal">
+        <div className="main-page screen">
+          <Header />
+          <FlexRow>
+            <FlexCol>
+              <Title>{title}</Title>
+              <LoremIpsumDolorSi>{loremIpsumDolorSi}</LoremIpsumDolorSi>
+              <OverlapGroupContainer>
+                <OverlapGroup3>
+                  <SellGiftCards>{sellGiftCards2}</SellGiftCards>
+                </OverlapGroup3>
+                <OverlapGroup2>
+                  <BuyGiftCards>{signUp}</BuyGiftCards>
+                </OverlapGroup2>
+              </OverlapGroupContainer>
+            </FlexCol>
+            <ImagePlaceholder src={staticUrl + "/img/image-placeholder@1x.svg"} />
+          </FlexRow>
+          <OverlapGroup14>
+            <ByteSizeArrowBottom src={staticUrl + "/img/bytesize-arrow-bottom@2x.svg"} />
+            <ByteSizeArrowBottom1 src={staticUrl + "/img/bytesize-arrow-bottom@2x.svg"} />
+            <Group9>
+              <OverlapGroup12>
+                <Group6>
+                  <SubmitYourGiftCard>{submitYourGiftCard}</SubmitYourGiftCard>
+                  <Successful1 src={staticUrl + "/img/successful-1@2x.svg"} />
+                </Group6>
+                <Rectangle4 />
+              </OverlapGroup12>
+              <OverlapGroup11>
+                <Group7>
+                  <GetAQuoteInstantly>{getAQuoteInstantly}</GetAQuoteInstantly>
+                  <Label1 src={staticUrl + "/img/label-1@2x.svg"} />
+                </Group7>
+                <Rectangle4 />
+              </OverlapGroup11>
+              <OverlapGroup11>
+                <Group8>
+                  <GetPaidInCrypto>{getPaidInCrypto}</GetPaidInCrypto>
+                  <CurrencyExchange1 src={staticUrl + "/img/currency-exchange-1@2x.svg"} />
+                </Group8>
+                <Rectangle4 />
+              </OverlapGroup11>
+            </Group9>
+          </OverlapGroup14>
+          <GiftCardValueCalculator>{giftCardValueCalculator}</GiftCardValueCalculator>
+          <Group13>
+            <OverlapGroup4>
+              <OverlapGroup>
+                <Calculate>{calculate}</Calculate>
+              </OverlapGroup>
+              <OverlapGroup1>
+                <Proceed>{proceed}</Proceed>
+              </OverlapGroup1>
+              <SELLCARD>{sellCard}</SELLCARD>
+              <BUYCARD>{buyCard}</BUYCARD>
+              <Rectangle7 />
+              <OverlapGroup21>
+                <Line2 src={staticUrl + "/img/line-2@2x.svg"} />
+              </OverlapGroup21>
+              <Label>{label}</Label>
+              <Label2>{label2}</Label2>
+              <Label3>{label3}</Label3>
+              <Rectangle8 />
+              <Rectangle9 />
+              <Number>{number1}</Number>
+              <Cursor />
+              <IcSort src={staticUrl + "/img/ic-sort@2x.svg"} />
+              <Rectangle10 />
+              <IcChevron src={staticUrl + "/img/ic-chevron@2x.svg"} />
+              <AppleGiftCard>{appleGiftCard}</AppleGiftCard>
+              <Number1>{number2}</Number1>
+            </OverlapGroup4>
+          </Group13>
+          <OurValues>{ourValues}</OurValues>
+          <Group8081>
+            <Card1>
+              <VueSaxOutLineSecurity src={staticUrl + "/img/vuesax-outline-security@2x.svg"} />
+              <Security>{security}</Security>
+              <Rectangle342 />
+              <WeMonitorEachTran>{weMonitorEachTran}</WeMonitorEachTran>
+              <LearnMore>
+                <LoadMore>{cardsicle1}</LoadMore>
+                <Vector src={staticUrl + "/img/vector@2x.svg"} />
+              </LearnMore>
+            </Card1>
+            <Card4 service={card41Props.service} ourSimpleAndPractical={card41Props.ourSimpleAndPractical} />
+            <Card4
+                service={card42Props.service}
+                ourSimpleAndPractical={card42Props.ourSimpleAndPractical}
+                className={card42Props.className}
+            />
+          </Group8081>
+          <FlexRow1>
+            <ImagePlaceholder1 src={staticUrl + "/img/image-placeholder-2@1x.svg"} />
+            <Group8089>
+              <SwapYourGiftCardsForCash>{loadMore}</SwapYourGiftCardsForCash>
+              <SubmitYourGiftCar>{submitYourGiftCar}</SubmitYourGiftCar>
+              <OverlapGroup5>
+                <BuyGiftCards>{logIn}</BuyGiftCards>
+              </OverlapGroup5>
+            </Group8089>
+          </FlexRow1>
+          <FlexRow2>
+            <Group8090>
+              <BuyGiftCardsAndG>{swapYourGiftCardsForCash}</BuyGiftCardsAndG>
+              <BrowseYourFavorite>{browseYourFavorite}</BrowseYourFavorite>
+              <OverlapGroup6>
+                <SellGiftCards>{buyGiftCards3}</SellGiftCards>
+              </OverlapGroup6>
+            </Group8090>
+            <ImagePlaceholder2 src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
+          </FlexRow2>
+          <PopularRetailers>{popularRetailers}</PopularRetailers>
+          <FlexRow3>
+            <Vector1 src={staticUrl + "/img/vector-1@2x.svg"} />
+            <Group8085>
+              <Apple>{apple}</Apple>
+              <FlexCol1>
+                <OverlapGroup61>
+                  <Amazon>{amazon}</Amazon>
+                </OverlapGroup61>
+                <Ellipse2 src={staticUrl + "/img/ellipse-2@2x.svg"} />
+              </FlexCol1>
+              <OverlapGroup8>
+                <Adidas>{adidas}</Adidas>
+              </OverlapGroup8>
+              <OverlapGroup51>
+                <AmericanExpress>{sellGiftCards3}</AmericanExpress>
+              </OverlapGroup51>
+              <OverlapGroup8>
+                <AirBnb>{airbnb}</AirBnb>
+              </OverlapGroup8>
+              <OverlapGroup7>
+                <Surname>{americanExpress}</Surname>
+              </OverlapGroup7>
+            </Group8085>
+            <Vector2 src={staticUrl + "/img/vector@2x.svg"} />
+          </FlexRow3>
+          <PayoutContainer>
+            <X80Payout>{sellGiftCards1}</X80Payout>
+            <X75Payout>{buyGiftCards1}</X75Payout>
+            <X60Payout>{aboutUs1}</X60Payout>
+            <X82Payout>{refundAndCancellationPolicy1}</X82Payout>
+            <X60Payout1>{faq1}</X60Payout1>
+            <X75Payout1>{x80Payout}</X75Payout1>
+          </PayoutContainer>
+          <FlexRow4>
+            <ImagePlaceholder1 src={staticUrl + "/img/image-placeholder-2@1x.svg"} />
+            <Group8088>
+              <SellGiftCardsOnlineFromTopBrands>{buyGiftCardsAndG}</SellGiftCardsOnlineFromTopBrands>
+              <WeAcceptGiftCards>{surname}</WeAcceptGiftCards>
+              <OverlapGroup9>
+                <SeeAvailableCards>{buyGiftCards2}</SeeAvailableCards>
+              </OverlapGroup9>
+            </Group8088>
+          </FlexRow4>
+          <Footer />
+        </div>
       </div>
-    </div>
   );
 }
 

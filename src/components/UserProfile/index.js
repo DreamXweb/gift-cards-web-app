@@ -2,24 +2,21 @@ import React from "react";
 import Group8115 from "../Group8115";
 import styled from "styled-components";
 import {
-  InterNormalWaterloo16px,
   InterMediumOnyx16px,
   InterBoldOnyx22px,
   ValignTextMiddle,
   InterSemiBoldOnyx18px,
   InterSemiBoldBlack18px,
-  InterSemiBoldOnyx20px,
   InterNormalSonicSilver16px,
   InterBoldBlack22px,
   MulishNormalSonicSilver16px,
   Border1pxAthensGray,
-  InterNormalOnyx16px,
-  InterBlackOnyx30px,
   InterSemiBoldBlack22px,
 } from "../../styledMixins";
 import "./UserProfile.css";
-import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import App, {staticUrl} from "../../App";
+import Header from "../Header";
+import Footer from "../Footer";
 
 function UserProfile(props) {
   const {
@@ -43,107 +40,74 @@ function UserProfile(props) {
     cryptoAccount,
     cryptoAddress,
     placeholder3,
-    cardsicle,
-    company,
-    sellGiftCards,
-    buyGiftCards,
-    aboutUs,
-    refundAndCancellationPolicy,
-    faq,
-    partnersProgram,
-    contactingUs,
-    ifYouHaveAnyQues,
-    privacyPolicy,
-    termsConditions,
-    supportCardsicleCom,
   } = props;
 
   return (
-    <div className="container-center-horizontal">
-      <div className="user-profile screen">
-        <OverlapGroup4>
-          <Header2 />
-        </OverlapGroup4>
-        <FlexRow>
-          <FlexCol>
-            <Ellipse4 />
-            <Name>{name1}</Name>
-            <OverlapGroup2>
-              <VueSaxOutLineEdit2 src={staticUrl + "/img/vuesax-outline-edit-2@2x.svg"} />
-              <EditProfile>{editProfile}</EditProfile>
-              <Rectangle359 />
-            </OverlapGroup2>
-          </FlexCol>
-          <FlexCol1>
-            <MyProfile1>{myProfile2}</MyProfile1>
-            <Rectangle342 />
-            <PersonalInformation>{personalInformation}</PersonalInformation>
-            <NameContainer>
-              <FirstName>{firstName}</FirstName>
-              <Name1>{name2}</Name1>
-            </NameContainer>
-            <NameContainer>
-              <LastName>{lastName}</LastName>
-              <Surname>{surname}</Surname>
-            </NameContainer>
-            <FlexRow1>
-              <PhoneNumber>{phoneNumber}</PhoneNumber>
-              <Group8115 />
-            </FlexRow1>
-          </FlexCol1>
-        </FlexRow>
-        <FlexCol2>
-          <EmailContainer>
-            <EmailAddress>{emailAddress}</EmailAddress>
-            <YourNameEmailCom>{yourNameEmailCom}</YourNameEmailCom>
-          </EmailContainer>
-          <FlexRow2>
-            <ChangePassword>{changePassword}</ChangePassword>
-            <Group8098 src={staticUrl + "/img/group-8098@2x.svg"} />
-            <VueSaxOutLineEdit21 src={staticUrl + "/img/vuesax-outline-edit-2@2x.svg"} />
-          </FlexRow2>
-          <Border />
-          <BankAccount>{bankAccount}</BankAccount>
-          <FlexRow3>
-            <RoutingNumber>{routingNumber}</RoutingNumber>
-            <Placeholder>{placeholder1}</Placeholder>
-          </FlexRow3>
-          <FlexRow3>
-            <AccountNumber>{accountNumber}</AccountNumber>
-            <Placeholder1>{placeholder2}</Placeholder1>
-          </FlexRow3>
-          <Border1 />
-          <CryptoAccount>{cryptoAccount}</CryptoAccount>
-          <FlexRow4>
-            <CryptoAddress>{cryptoAddress}</CryptoAddress>
-            <Placeholder2>{placeholder3}</Placeholder2>
-          </FlexRow4>
-          <OverlapGroup>
-            <Cardsicle>{cardsicle}</Cardsicle>
-            <Group68>
-              <Company>{company}</Company>
-              <SellGiftCards>{sellGiftCards}</SellGiftCards>
-              <BuyGiftCards>{buyGiftCards}</BuyGiftCards>
-              <BuyGiftCards>{aboutUs}</BuyGiftCards>
-              <RefundAndCancellationPolicy>{refundAndCancellationPolicy}</RefundAndCancellationPolicy>
-              <FAQ>{faq}</FAQ>
-              <FAQ>{partnersProgram}</FAQ>
-            </Group68>
-            <OverlapGroup1>
-              <Group200>
-                <Company>{contactingUs}</Company>
-                <IfYouHaveAnyQues>{ifYouHaveAnyQues}</IfYouHaveAnyQues>
-                <FlexRow5>
-                  <PrivacyPolicy>{privacyPolicy}</PrivacyPolicy>
-                  <TermsConditions>{termsConditions}</TermsConditions>
-                </FlexRow5>
-              </Group200>
-              <SupportCardsicleCom>{supportCardsicleCom}</SupportCardsicleCom>
-            </OverlapGroup1>
-          </OverlapGroup>
-        </FlexCol2>
+      <div className="container-center-horizontal">
+        <div className="user-profile screen">
+          <OverlapGroup4>
+            <Header />
+          </OverlapGroup4>
+          <FlexRow>
+            <FlexCol>
+              <Ellipse4 />
+              <Name>{name1}</Name>
+              <OverlapGroup2 onClick={() => window.location = App.homepage + '/edit-profile'}>
+                <VueSaxOutLineEdit2 src={staticUrl + "/img/vuesax-outline-edit-2@2x.svg"} />
+                <EditProfile>{editProfile}</EditProfile>
+                <Rectangle359 />
+              </OverlapGroup2>
+            </FlexCol>
+            <FlexCol1>
+              <MyProfile1>{myProfile2}</MyProfile1>
+              <Rectangle342 />
+              <PersonalInformation>{personalInformation}</PersonalInformation>
+              <NameContainer>
+                <FirstName>{firstName}</FirstName>
+                <Name1>{name2}</Name1>
+              </NameContainer>
+              <NameContainer>
+                <LastName>{lastName}</LastName>
+                <Surname>{surname}</Surname>
+              </NameContainer>
+              <FlexRow1>
+                <PhoneNumber>{phoneNumber}</PhoneNumber>
+                <Group8115 />
+              </FlexRow1>
+            </FlexCol1>
+          </FlexRow>
+          <FlexCol2>
+            <EmailContainer>
+              <EmailAddress>{emailAddress}</EmailAddress>
+              <YourNameEmailCom>{yourNameEmailCom}</YourNameEmailCom>
+            </EmailContainer>
+            <FlexRow2>
+              <ChangePassword>{changePassword}</ChangePassword>
+              <Group8098 src={staticUrl + "/img/group-8098@2x.svg"} />
+              <VueSaxOutLineEdit21 src={staticUrl + "/img/vuesax-outline-edit-2@2x.svg"} />
+            </FlexRow2>
+            <Border />
+            <BankAccount>{bankAccount}</BankAccount>
+            <FlexRow3>
+              <RoutingNumber>{routingNumber}</RoutingNumber>
+              <Placeholder>{placeholder1}</Placeholder>
+            </FlexRow3>
+            <FlexRow3>
+              <AccountNumber>{accountNumber}</AccountNumber>
+              <Placeholder1>{placeholder2}</Placeholder1>
+            </FlexRow3>
+            <Border1 />
+            <CryptoAccount>{cryptoAccount}</CryptoAccount>
+            <FlexRow4>
+              <CryptoAddress>{cryptoAddress}</CryptoAddress>
+              <Placeholder2>{placeholder3}</Placeholder2>
+            </FlexRow4>
+
+            <Footer marginTop={150} />
+
+          </FlexCol2>
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -198,6 +162,7 @@ const OverlapGroup2 = styled.div`
   margin-top: 21px;
   margin-left: 5px;
   border-radius: 8px;
+  cursor: pointer;
 `;
 
 const VueSaxOutLineEdit2 = styled.img`
@@ -516,139 +481,6 @@ const Placeholder2 = styled.div`
   margin-left: 53px;
   letter-spacing: 0;
   line-height: 21px;
-  white-space: nowrap;
-`;
-
-const OverlapGroup = styled.div`
-  height: 470px;
-  margin-top: 95px;
-  margin-right: 2px;
-  display: flex;
-  padding: 0 165px;
-  align-items: center;
-  min-width: 1440px;
-  background-color: var(--gray-nurse);
-`;
-
-// TODO cancel duplicated code
-const Cardsicle = styled.div`
-  ${InterBlackOnyx30px}
-  min-height: 36px;
-  align-self: flex-start;
-  margin-top: 77px;
-  min-width: 161px;
-  letter-spacing: 2.1px;
-`;
-
-const Group68 = styled.div`
-  width: 166px;
-  margin-left: 269px;
-  margin-top: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 313px;
-`;
-
-const Company = styled.div`
-  ${InterSemiBoldOnyx20px}
-  min-height: 24px;
-  letter-spacing: 0;
-`;
-
-const SellGiftCards = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const BuyGiftCards = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 20px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const RefundAndCancellationPolicy = styled.div`
-  ${InterNormalWaterloo16px}
-  width: 152px;
-  min-height: 33px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const FAQ = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 19px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const OverlapGroup1 = styled.div`
-  width: 322px;
-  height: 313px;
-  position: relative;
-  margin-left: 186px;
-  margin-top: 3px;
-`;
-
-const Group200 = styled.div`
-  position: absolute;
-  width: 322px;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 313px;
-`;
-
-const IfYouHaveAnyQues = styled.p`
-  ${InterNormalWaterloo16px}
-  width: 314px;
-  min-height: 52px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-`;
-
-const FlexRow5 = styled.div`
-  ${InterNormalWaterloo16px}
-  height: 26px;
-  margin-top: 171px;
-  display: flex;
-  align-items: flex-start;
-  min-width: 296px;
-`;
-
-const PrivacyPolicy = styled.div`
-  min-height: 26px;
-  min-width: 105px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const TermsConditions = styled.div`
-  min-height: 26px;
-  margin-left: 35px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const SupportCardsicleCom = styled.div`
-  ${InterNormalOnyx16px}
-  position: absolute;
-  top: 136px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: 16px;
   white-space: nowrap;
 `;
 

@@ -2,30 +2,31 @@ import React from "react";
 import Group80762 from "../Group80762";
 import styled from "styled-components";
 import {
-  InterNormalSilverSand16px,
-  InterMediumOnyx12px,
-  InterMediumOnyx16px,
-  Border1pxCeleste,
+    InterNormalSilverSand16px,
+    InterMediumOnyx12px,
+    InterMediumOnyx16px,
+    Border1pxCeleste,
 } from "../../styledMixins";
 
 
 function Group8076(props) {
-  const { className } = props;
+    const { className } = props;
 
-  return (
-    <Group80761 className={`group-8076 ${className || ""}`}>
-      <EmailAddress className="email-address-1">Email Address</EmailAddress>
-      <OverlapGroup className="overlap-group-2">
-        <YourNameEmailCom className="yourNameEmailCom-1">yourname@email.com</YourNameEmailCom>
-        <Rectangle72 className="rectangle-72-1" />
-      </OverlapGroup>
-      <Password className="password">Password</Password>
-      <Group80762 />
-      <RememberMe className="remember-me">Remember me</RememberMe>
-    </Group80761>
-  );
+    return (
+        <Group80761 className={`group-8076 ${className || ""}`}>
+            <EmailAddress className="email-address-1">Email Address</EmailAddress>
+            <OverlapGroup className="overlap-group-2">
+                <YourNameEmailCom className="yourNameEmailCom-1">yourname@email.com</YourNameEmailCom>
+                <Rectangle72 className="rectangle-72-1" />
+            </OverlapGroup>
+            <Password className="password">Password</Password>
+            <Group80762 />
+            <RememberMe className="remember-me">Remember me</RememberMe>
+        </Group80761>
+    );
 }
 
+// TODO cancel duplicated code
 const Group80761 = styled.div`
   position: absolute;
   width: 406px;

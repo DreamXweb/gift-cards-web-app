@@ -16,7 +16,7 @@ import {
 } from "../../styledMixins";
 import "./CheckoutPage.css";
 import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import Header from "../Header";
 
 function CheckoutPage(props) {
   const {
@@ -59,7 +59,7 @@ function CheckoutPage(props) {
     <div className="container-center-horizontal">
       <div className="checkout-page screen">
         <FlexCol>
-          <Header2 />
+          <Header />
           <FlexRow>
             <FlexCol1>
               <Checkout>{checkout}</Checkout>

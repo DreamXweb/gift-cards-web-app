@@ -1,5 +1,4 @@
 import React from "react";
-import Header2 from "../Header2";
 import PageDisabled from "../PageDisabled";
 import PageActive from "../PageActive";
 import PageDefault from "../PageDefault";
@@ -20,7 +19,8 @@ import {
   InterSemiBoldBlack22px,
 } from "../../styledMixins";
 import "./BuyGiftCardsPage.css";
-import {staticUrl} from "../../App";
+import App, {staticUrl} from "../../App";
+import Header from "../Header";
 
 function BuyGiftCardsPage(props) {
   const {
@@ -94,7 +94,7 @@ function BuyGiftCardsPage(props) {
     <div className="container-center-horizontal">
       <div className="buy-gift-cards-page screen">
         <FlexCol>
-          <Header2 />
+          <Header />
           <FlexRow>
             <FlexCol1>
               <Rectangle343 />
@@ -185,7 +185,7 @@ function BuyGiftCardsPage(props) {
             <FlexCol8>
               <FlexCol9>
                 <FlexRow3>
-                  <OverlapGroup19>
+                  <OverlapGroup19 onClick={() => window.location = App.homepage + '/checkout-page'}>
                     <Apple>{apple}</Apple>
                   </OverlapGroup19>
                   <OverlapGroup18>
@@ -726,6 +726,7 @@ const OverlapGroup19 = styled.div`
   min-width: 150px;
   background-image: url(/img/ellipse-2@2x.svg);
   background-size: 100% 100%;
+  cursor: pointer;
 `;
 
 const Apple = styled.div`

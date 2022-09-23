@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Footer from "../Footer";
 import styled from "styled-components";
 import {
@@ -13,9 +13,9 @@ import {
 } from "../../styledMixins";
 import "./PayoutMethodACH.css";
 import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import Header2 from "../Header";
 
-function PayoutMethodACH(props) {
+function PayoutMethod(props) {
   const {
     usdt,
     ethereum,
@@ -31,6 +31,11 @@ function PayoutMethodACH(props) {
     footerProps,
   } = props;
 
+  // USDT, ACH, Bitcoin, Ethereum
+  const [paymentMethod, setPaymentMethod] = useState('USDT');
+
+  const ach = paymentMethod === 'ACH';
+
   return (
     <div className="container-center-horizontal">
       <div className="payout-method-ach screen">
@@ -45,7 +50,7 @@ function PayoutMethodACH(props) {
               <RoutingNumber>{routingNumber}</RoutingNumber>
               <AccountNumber>{accountNumber}</AccountNumber>
               <OverlapGroup1>
-                <PayoutMethod>{payoutMethod}</PayoutMethod>
+                <PayoutMethodContainer>{payoutMethod}</PayoutMethodContainer>
                 <BankAccount>{bankAccount}</BankAccount>
                 <Rectangle7 />
                 <OverlapGroup>
@@ -171,7 +176,7 @@ const Rectangle7 = styled.div`
   border-radius: 10px;
 `;
 
-const PayoutMethod = styled.div`
+const PayoutMethodContainer = styled.div`
   ${InterBoldOnyx22px}
   position: absolute;
   top: 30px;
@@ -268,4 +273,4 @@ const ImagePlaceholder = styled.img`
   margin-top: 144px;
 `;
 
-export default PayoutMethodACH;
+export default PayoutMethod;

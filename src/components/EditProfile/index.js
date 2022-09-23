@@ -2,31 +2,27 @@ import React from "react";
 import Group8115 from "../Group8115";
 import styled from "styled-components";
 import {
-  InterNormalWaterloo16px,
   InterMediumOnyx16px,
   Border1pxCeleste,
   InterBoldOnyx22px,
-  InterSemiBoldBlack22px,
   InterSemiBoldOnyx18px,
   InterSemiBoldBlack18px,
-  InterSemiBoldOnyx20px,
   InterNormalSonicSilver16px,
   InterBoldBlack22px,
   MulishNormalSonicSilver16px,
-  Border1pxAthensGray,
-  InterNormalOnyx16px,
-  InterBlackOnyx30px,
+  InterSemiBoldWhite14px,
+  InterSemiBoldBlack22px,
   ValignTextMiddle,
 } from "../../styledMixins";
 import "./EditProfile.css";
-import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import Header from "../Header";
+import App from "../../App";
+import Footer from "../Footer";
 
 function EditProfile(props) {
   const {
     place,
     name1,
-    editProfile,
     myProfile,
     personalInformation,
     firstName,
@@ -45,131 +41,100 @@ function EditProfile(props) {
     cryptoAccount,
     cryptoAddress,
     placeholder3,
-    cardsicle,
-    company,
-    sellGiftCards,
-    buyGiftCards,
-    aboutUs,
-    refundAndCancellationPolicy,
-    faq,
-    partnersProgram,
-    contactingUs,
-    ifYouHaveAnyQues,
-    privacyPolicy,
-    termsConditions,
-    supportCardsicleCom,
-    group8115Props,
   } = props;
 
   return (
-    <div className="container-center-horizontal">
-      <div className="edit-profile screen">
-        <Header2 />
-        <FlexRow>
-          <FlexCol>
-            <OverlapGroup10>
-              <Place>{place}</Place>
-            </OverlapGroup10>
-            <Name>{name1}</Name>
-            <OverlapGroup2>
-              <VueSaxOutLineEdit2 src={staticUrl + "/img/vuesax-outline-edit-2@2x.svg"} />
-              <EditProfile1>{editProfile}</EditProfile1>
-              <Rectangle359 />
-            </OverlapGroup2>
-          </FlexCol>
-          <FlexCol1>
-            <MyProfile>{myProfile}</MyProfile>
-            <Rectangle342 />
-            <PersonalInformation>{personalInformation}</PersonalInformation>
-            <FlexRow1>
-              <FirstName>{firstName}</FirstName>
-              <OverlapGroup3>
-                <Name1>{name2}</Name1>
-                <Rectangle72 />
-              </OverlapGroup3>
-            </FlexRow1>
-            <FlexRow2>
-              <LastName>{lastName}</LastName>
-              <OverlapGroup4>
-                <Name1>{surname}</Name1>
-                <Rectangle72 />
-              </OverlapGroup4>
-            </FlexRow2>
+      <div className="container-center-horizontal">
+        <div className="edit-profile screen">
+          <Header />
+          <FlexRow>
+            <FlexCol>
+              <OverlapGroup9>
+                <Place>{place}</Place>
+              </OverlapGroup9>
+              <Name>{name1}</Name>
+            </FlexCol>
+            <FlexCol1>
+              <MyProfile>{myProfile}</MyProfile>
+              <Rectangle342 />
+              <PersonalInformation>{personalInformation}</PersonalInformation>
+              <FlexRow1>
+                <FirstName>{firstName}</FirstName>
+                <OverlapGroup2>
+                  <Name1>{name2}</Name1>
+                  <Rectangle72 />
+                </OverlapGroup2>
+              </FlexRow1>
+              <FlexRow2>
+                <LastName>{lastName}</LastName>
+                <OverlapGroup3>
+                  <Name1>{surname}</Name1>
+                  <Rectangle72 />
+                </OverlapGroup3>
+              </FlexRow2>
+            </FlexCol1>
+          </FlexRow>
+          <FlexCol2>
             <FlexRow3>
               <PhoneNumber>{phoneNumber}</PhoneNumber>
-              <OverlapGroup5>
-                <Group8115 className={group8115Props.className} />
+              <OverlapGroup4>
+                <Group8115 />
                 <Rectangle72 />
-              </OverlapGroup5>
+              </OverlapGroup4>
             </FlexRow3>
-          </FlexCol1>
-        </FlexRow>
-        <FlexCol2>
-          <FlexRow4>
-            <EmailAddress>{emailAddress}</EmailAddress>
-            <OverlapGroup6>
-              <YourNameEmailCom>{yourNameEmailCom}</YourNameEmailCom>
-            </OverlapGroup6>
-          </FlexRow4>
-          <FlexRow5>
-            <ChangePassword>{changePassword}</ChangePassword>
-            <Group8122>
-              <Group8121 src={staticUrl + "/img/group-8098@2x.svg"} />
-            </Group8122>
-          </FlexRow5>
-          <Border />
-          <BankAccount>{bankAccount}</BankAccount>
-          <FlexRow6>
-            <RoutingNumber>{routingNumber}</RoutingNumber>
-            <OverlapGroup7>
-              <Placeholder>{placeholder1}</Placeholder>
-            </OverlapGroup7>
-          </FlexRow6>
-          <FlexRow7>
-            <AccountNumber>{accountNumber}</AccountNumber>
-            <OverlapGroup8>
-              <Placeholder>{placeholder2}</Placeholder>
-            </OverlapGroup8>
-          </FlexRow7>
-          <Border1 />
-          <CryptoAccount>{cryptoAccount}</CryptoAccount>
-          <FlexRow6>
-            <CryptoAddress>{cryptoAddress}</CryptoAddress>
-            <OverlapGroup9>
-              <Placeholder>{placeholder3}</Placeholder>
-            </OverlapGroup9>
-          </FlexRow6>
-          <OverlapGroup>
-            <Cardsicle>{cardsicle}</Cardsicle>
-            <Group68>
-              <Company>{company}</Company>
-              <SellGiftCards>{sellGiftCards}</SellGiftCards>
-              <BuyGiftCards>{buyGiftCards}</BuyGiftCards>
-              <BuyGiftCards>{aboutUs}</BuyGiftCards>
-              <RefundAndCancellationPolicy>{refundAndCancellationPolicy}</RefundAndCancellationPolicy>
-              <FAQ>{faq}</FAQ>
-              <FAQ>{partnersProgram}</FAQ>
-            </Group68>
-            <OverlapGroup1>
-              <Group200>
-                <Company>{contactingUs}</Company>
-                <IfYouHaveAnyQues>{ifYouHaveAnyQues}</IfYouHaveAnyQues>
-                <FlexRow8>
-                  <PrivacyPolicy>{privacyPolicy}</PrivacyPolicy>
-                  <TermsConditions>{termsConditions}</TermsConditions>
-                </FlexRow8>
-              </Group200>
-              <SupportCardsicleCom>{supportCardsicleCom}</SupportCardsicleCom>
-            </OverlapGroup1>
-          </OverlapGroup>
-        </FlexCol2>
+            <FlexRow4>
+              <EmailAddress>{emailAddress}</EmailAddress>
+              <OverlapGroup5>
+                <YourNameEmailCom>{yourNameEmailCom}</YourNameEmailCom>
+              </OverlapGroup5>
+            </FlexRow4>
+            <FlexRow5>
+              <ChangePassword>{changePassword}</ChangePassword>
+              <Group8122>
+                <Group8121 src="https://anima-uploads.s3.amazonaws.com/projects/62c832c763ed96b1e323f642/releases/62c834a54787cdaec3d8b7b7/img/group-8098@2x.svg" />
+              </Group8122>
+            </FlexRow5>
+            <Border />
+            <BankAccount>{bankAccount}</BankAccount>
+            <FlexRow6>
+              <RoutingNumber>{routingNumber}</RoutingNumber>
+              <OverlapGroup6>
+                <Placeholder>{placeholder1}</Placeholder>
+              </OverlapGroup6>
+            </FlexRow6>
+            <FlexRow4>
+              <AccountNumber>{accountNumber}</AccountNumber>
+              <OverlapGroup7>
+                <Placeholder>{placeholder2}</Placeholder>
+              </OverlapGroup7>
+            </FlexRow4>
+            <Border1 />
+            <CryptoAccount>{cryptoAccount}</CryptoAccount>
+            <FlexRow6>
+              <CryptoAddress>{cryptoAddress}</CryptoAddress>
+              <OverlapGroup8>
+                <Placeholder>{placeholder3}</Placeholder>
+              </OverlapGroup8>
+            </FlexRow6>
+            <FlexRow6>
+              <Button onClick={() => window.location = App.homepage + '/payout-method'}>
+                <Label>CONFIGURE PAYMENT METHOD</Label>
+              </Button>
+              <Button onClick={() => window.location = App.homepage + '/user-profile'}>
+                <Label>SAVE</Label>
+              </Button>
+            </FlexRow6>
+
+            <Footer marginTop={150} />
+
+          </FlexCol2>
+        </div>
       </div>
-    </div>
   );
 }
 
 const FlexRow = styled.div`
-  height: 287px;
+  height: 233px;
   margin-top: 59px;
   margin-right: 190px;
   display: flex;
@@ -178,17 +143,16 @@ const FlexRow = styled.div`
 `;
 
 const FlexCol = styled.div`
-  width: 152px;
+  width: 150px;
   margin-top: 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 267px;
+  min-height: 196px;
 `;
 
-const OverlapGroup10 = styled.div`
+const OverlapGroup9 = styled.div`
   height: 150px;
-  margin-right: 2px;
   display: flex;
   padding: 63px 45px;
   align-items: flex-start;
@@ -219,55 +183,18 @@ const Name = styled.div`
   ${InterSemiBoldBlack22px}
   min-height: 27px;
   margin-top: 19px;
-  margin-left: 1px;
+  margin-left: 3px;
   min-width: 119px;
   letter-spacing: 0;
 `;
 
-const OverlapGroup2 = styled.div`
-  width: 143px;
-  height: 50px;
-  position: relative;
-  margin-top: 21px;
-  margin-left: 5px;
-  border-radius: 8px;
-`;
-
-const VueSaxOutLineEdit2 = styled.img`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 13px;
-  left: 109px;
-`;
-
-const EditProfile1 = styled.div`
-  ${InterMediumOnyx16px}
-  position: absolute;
-  top: 10px;
-  left: 16px;
-  letter-spacing: 0;
-  line-height: 30px;
-  white-space: nowrap;
-`;
-
-const Rectangle359 = styled.div`
-  ${Border1pxAthensGray}
-  position: absolute;
-  width: 143px;
-  height: 50px;
-  top: 0;
-  left: 0;
-  border-radius: 8px;
-`;
-
 const FlexCol1 = styled.div`
   width: 592px;
-  margin-left: 144px;
+  margin-left: 146px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 287px;
+  min-height: 233px;
 `;
 
 const MyProfile = styled.div`
@@ -314,7 +241,7 @@ const FirstName = styled.div`
   white-space: nowrap;
 `;
 
-const OverlapGroup3 = styled.div`
+const OverlapGroup2 = styled.div`
   width: 400px;
   height: 40px;
   position: relative;
@@ -361,7 +288,7 @@ const LastName = styled.div`
   white-space: nowrap;
 `;
 
-const OverlapGroup4 = styled.div`
+const OverlapGroup3 = styled.div`
   width: 400px;
   height: 40px;
   position: relative;
@@ -369,9 +296,18 @@ const OverlapGroup4 = styled.div`
   border-radius: 4px;
 `;
 
-const FlexRow3 = styled.div`
+const FlexCol2 = styled.div`
+  width: 1442px;
   margin-top: 14px;
-  margin-left: 4px;
+  margin-left: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 1157px;
+`;
+
+const FlexRow3 = styled.div`
+  margin-left: 106px;
   display: flex;
   align-items: center;
   min-width: 586px;
@@ -387,7 +323,7 @@ const PhoneNumber = styled.div`
   white-space: nowrap;
 `;
 
-const OverlapGroup5 = styled.div`
+const OverlapGroup4 = styled.div`
   width: 400px;
   height: 40px;
   position: relative;
@@ -395,17 +331,8 @@ const OverlapGroup5 = styled.div`
   border-radius: 4px;
 `;
 
-const FlexCol2 = styled.div`
-  width: 1442px;
-  margin-top: 14px;
-  margin-left: 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 978px;
-`;
-
 const FlexRow4 = styled.div`
+  margin-top: 14px;
   margin-left: 108px;
   display: flex;
   align-items: center;
@@ -422,7 +349,7 @@ const EmailAddress = styled.div`
   white-space: nowrap;
 `;
 
-const OverlapGroup6 = styled.div`
+const OverlapGroup5 = styled.div`
   ${Border1pxCeleste}
   height: 40px;
   margin-left: 62px;
@@ -513,8 +440,7 @@ const RoutingNumber = styled.div`
   white-space: nowrap;
 `;
 
-const OverlapGroup7 = styled.div`
-  ${Border1pxCeleste}
+const OverlapGroup6 = styled.div`
   height: 40px;
   margin-left: 44px;
   display: flex;
@@ -523,14 +449,6 @@ const OverlapGroup7 = styled.div`
   min-width: 400px;
   border-radius: 4px;
   box-shadow: 0px 2px 2px 2px #cccccc1a;
-`;
-
-const FlexRow7 = styled.div`
-  margin-top: 14px;
-  margin-left: 108px;
-  display: flex;
-  align-items: center;
-  min-width: 588px;
 `;
 
 const AccountNumber = styled.div`
@@ -543,8 +461,7 @@ const AccountNumber = styled.div`
   white-space: nowrap;
 `;
 
-const OverlapGroup8 = styled.div`
-  ${Border1pxCeleste}
+const OverlapGroup7 = styled.div`
   height: 40px;
   margin-left: 38px;
   display: flex;
@@ -583,8 +500,7 @@ const CryptoAddress = styled.div`
   white-space: nowrap;
 `;
 
-const OverlapGroup9 = styled.div`
-  ${Border1pxCeleste}
+const OverlapGroup8 = styled.div`
   height: 40px;
   margin-left: 48px;
   display: flex;
@@ -595,136 +511,28 @@ const OverlapGroup9 = styled.div`
   box-shadow: 0px 2px 2px 2px #cccccc1a;
 `;
 
-const OverlapGroup = styled.div`
-  height: 470px;
-  margin-top: 86px;
+const Button = styled.div`
+  height: 55px;
+  margin-top: 60px;
   margin-right: 2px;
   display: flex;
-  padding: 0 165px;
-  align-items: center;
-  min-width: 1440px;
-  background-color: var(--gray-nurse);
-`;
-
-// TODO cancel duplicated code
-const Cardsicle = styled.div`
-  ${InterBlackOnyx30px}
-  min-height: 36px;
-  align-self: flex-start;
-  margin-top: 77px;
-  min-width: 161px;
-  letter-spacing: 2.1px;
-`;
-
-const Group68 = styled.div`
-  width: 166px;
-  margin-left: 269px;
-  margin-top: 3px;
-  display: flex;
-  flex-direction: column;
+  padding: 18px 78px;
+  justify-content: flex-end;
   align-items: flex-start;
-  min-height: 313px;
+  min-width: 194px;
+  background-color: var(--granite-gray);
+  border-radius: 12px;
+  cursor: pointer;
 `;
 
-const Company = styled.div`
-  ${InterSemiBoldOnyx20px}
-  min-height: 24px;
+const Label = styled.div`
+  ${ValignTextMiddle}
+  ${InterSemiBoldWhite14px}
+            height: 18px;
+  min-width: 37px;
+  text-align: center;
   letter-spacing: 0;
-`;
-
-const SellGiftCards = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const BuyGiftCards = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 26px;
-  margin-top: 20px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const RefundAndCancellationPolicy = styled.div`
-  ${InterNormalWaterloo16px}
-  width: 152px;
-  min-height: 33px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const FAQ = styled.div`
-  ${InterNormalWaterloo16px}
-  min-height: 19px;
-  margin-top: 20px;
-  letter-spacing: 0;
-`;
-
-const OverlapGroup1 = styled.div`
-  width: 322px;
-  height: 313px;
-  position: relative;
-  margin-left: 186px;
-  margin-top: 3px;
-`;
-
-const Group200 = styled.div`
-  position: absolute;
-  width: 322px;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 313px;
-`;
-
-const IfYouHaveAnyQues = styled.p`
-  ${InterNormalWaterloo16px}
-  width: 314px;
-  min-height: 52px;
-  margin-top: 40px;
-  letter-spacing: 0;
-  line-height: 26px;
-`;
-
-const FlexRow8 = styled.div`
-  ${InterNormalWaterloo16px}
-  height: 26px;
-  margin-top: 171px;
-  display: flex;
-  align-items: flex-start;
-  min-width: 296px;
-`;
-
-const PrivacyPolicy = styled.div`
-  min-height: 26px;
-  min-width: 105px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const TermsConditions = styled.div`
-  min-height: 26px;
-  margin-left: 35px;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
-`;
-
-const SupportCardsicleCom = styled.div`
-  ${InterNormalOnyx16px}
-  position: absolute;
-  top: 136px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: 16px;
+  line-height: 18px;
   white-space: nowrap;
 `;
 

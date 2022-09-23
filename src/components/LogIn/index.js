@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import Icon from "../Icon";
-import Group8076 from "../Group8076";
 import Footer from "../Footer";
 import styled from "styled-components";
 import {
@@ -10,11 +9,12 @@ import {
   InterNormalSonicSilver16px,
   InterSemiBoldWhite14px,
   InterSemiBoldOnyx14px,
-  ValignTextMiddle,
+  ValignTextMiddle, InterMediumOnyx16px, InterMediumOnyx12px,
 } from "../../styledMixins";
 import "./LogIn.css";
-import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import App, {MainContext, staticUrl} from "../../App";
+import Header from "../Header";
+import s from './style.module.scss';
 
 function LogIn(props) {
   const {
@@ -29,42 +29,122 @@ function LogIn(props) {
     footerProps,
   } = props;
 
+  // noinspection JSCheckFunctionSignatures
+  const {setLoggedIn} = useContext(MainContext);
+
+  // TODO use it
+  const [passwordHidden, setPasswordHidden] = useState(true);
+
+  {/* TODO use react hook form */}
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const login = () => {
+    if (email === '***' && password === '***') {
+      setLoggedIn(true);
+      window.location = App.homepage + '/user-profile';
+    } else {
+      window.notify('Wrong credentials!');
+    }
+  }
+
   return (
-    <div className="container-center-horizontal">
-      <div className="log-in screen">
-        <Header2 />
-        <FlexRow>
-          <FlexCol>
-            <LogInToYourAccount>{logInToYourAccount}</LogInToYourAccount>
-            <OverlapGroup2>
-              <FormElements>
-                <Icon />
-                <FlexRow1>
-                  <Icon className={iconProps.className} />
-                  <ByLogInAnAccount>{byLogInAnAccount}</ByLogInAnAccount>
-                </FlexRow1>
-                <Button>
-                  <Label>{label1}</Label>
-                </Button>
-                <Button1>
-                  <Label1>{label2}</Label1>
-                </Button1>
-                <DontHaveAnAccount>{dontHaveAnAccount}</DontHaveAnAccount>
-              </FormElements>
-              <Group8076 className={group8076Props.className} />
-              <Group8098 src={staticUrl + "/img/group-8098@2x.svg"} />
-              <ForgotPassword>{forgottenPassword}</ForgotPassword>
-            </OverlapGroup2>
-          </FlexCol>
-          <FlexCol1>
-            <ImagePlaceholder src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
-          </FlexCol1>
-        </FlexRow>
-        <Footer className={footerProps.className} />
+      <div className="container-center-horizontal">
+        <div className="log-in screen">
+          <Header />
+          <FlexRow>
+            <FlexCol>
+              <LogInToYourAccount>{logInToYourAccount}</LogInToYourAccount>
+              <OverlapGroup2>
+                <FormElements>
+                  <Icon />
+                  <FlexRow1>
+                    <Icon className={iconProps.className} />
+                    <ByLogInAnAccount>{byLogInAnAccount}</ByLogInAnAccount>
+                  </FlexRow1>
+                  <Button onClick={login}>
+                    <Label>{label1}</Label>
+                  </Button>
+                  <Button1>
+                    <Label1>{label2}</Label1>
+                  </Button1>
+                  <DontHaveAnAccount>{dontHaveAnAccount}</DontHaveAnAccount>
+                </FormElements>
+
+                <Group80761 className={`group-8076 ${group8076Props.className || ""}`}>
+                  <EmailAddress className="email-address-1">Email Address</EmailAddress>
+
+                  {/* TODO right border color */}
+                  {/* TODO Enter -> password */}
+                  <input type={'email'} className={s['input']} placeholder={'yourname@email.com'} onChange={e => setEmail(e.target.value)} />
+
+                  <Password className="password">Password</Password>
+
+                  {/* TODO make it clickable */}
+                  <img id={s['eye']} src={staticUrl + "/img/vuesax-outline-eye-slash-2@2x.svg"} alt={'eye'} />
+
+                  {/* TODO right border color */}
+                  {/* TODO Enter -> submit */}
+                  <input type={passwordHidden ? 'password' : 'text'} className={s['input'] + ' ' + (password.length ? '' : s['password-empty'])} placeholder={'·········'} onChange={e => setPassword(e.target.value)} />
+
+                  <RememberMe className="remember-me">Remember me</RememberMe>
+                </Group80761>
+
+                <ForgotPassword onClick={() => window.location = App.homepage + '/forgot-password'}>{forgottenPassword}</ForgotPassword>
+              </OverlapGroup2>
+            </FlexCol>
+            <FlexCol1>
+              <ImagePlaceholder src={staticUrl + "/img/image-placeholder-1@1x.svg"} />
+            </FlexCol1>
+          </FlexRow>
+          <Footer className={footerProps.className} />
+        </div>
       </div>
-    </div>
   );
 }
+
+const Group80761 = styled.div`
+  position: absolute;
+  width: 406px;
+  top: 306px;
+  left: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 261px;
+
+  &.group-8076.group-8076-1 {
+    top: 0;
+    left: 0;
+  }
+`;
+
+const EmailAddress = styled.div`
+  ${InterMediumOnyx16px}
+  min-height: 24px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+`;
+
+const Password = styled.div`
+  ${InterMediumOnyx16px}
+  min-height: 24px;
+  margin-top: 25px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+`;
+
+const RememberMe = styled.div`
+  ${InterMediumOnyx12px}
+  min-height: 24px;
+  margin-top: 74px;
+  margin-left: 25px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+`;
 
 const FlexRow = styled.div`
   height: 657px;
@@ -139,6 +219,7 @@ const Button = styled.div`
   min-width: 400px;
   background-color: var(--granite-gray);
   border-radius: 12px;
+  cursor: pointer;
 `;
 
 const Label = styled.div`
@@ -182,14 +263,6 @@ const DontHaveAnAccount = styled.div`
   text-decoration: underline;
 `;
 
-const Group8098 = styled.img`
-  position: absolute;
-  width: 151px;
-  height: 7px;
-  top: 139px;
-  left: 16px;
-`;
-
 const ForgotPassword = styled.div`
   ${InterMediumBlack12px}
   position: absolute;
@@ -199,6 +272,7 @@ const ForgotPassword = styled.div`
   line-height: 24px;
   text-decoration: underline;
   white-space: nowrap;
+  cursor: pointer;
 `;
 
 const FlexCol1 = styled.div`

@@ -15,7 +15,7 @@ import {
 } from "../../styledMixins";
 import "./MyOrders.css";
 import {staticUrl} from "../../App";
-import Header2 from "../Header2";
+import Header from "../Header";
 
 function MyOrders(props) {
   const {
@@ -63,100 +63,103 @@ function MyOrders(props) {
   } = props;
 
   return (
-    <div className="container-center-horizontal">
-      <div className="my-orders screen">
-        <Header2 />
-        <FlexRow>
-          <Total25Orders>{total25Orders}</Total25Orders>
-          <SortBy>
-            <SortByAmount>{sortByAmount}</SortByAmount>
-            <IcChevron src={staticUrl + "/img/ic-chevron-2@2x.svg"} />
-          </SortBy>
-          <Filter>
-            <Filter1>{filter}</Filter1>
-            <IcRoundFilterList src={staticUrl + "/img/ic-round-filter-list@2x.svg"} />
-          </Filter>
-        </FlexRow>
-        <Group8113>
-          <Amount>{amount}</Amount>
-          <CardType>{cardType}</CardType>
-          <Address>{address}</Address>
-          <Status>{status}</Status>
-          <Border />
-          <Border1 />
-          <Border2 />
-          <Border3 />
-          <Border4 />
-          <Border5 />
-          <Border6 />
-          <Border7 />
-          <Image1 />
-          <Image2 />
-          <C004560>{c0045601}</C004560>
-          <C0045601>{c0045602}</C0045601>
-          <C004562>{c0045621}</C004562>
-          <C0045621>{c0045622}</C0045621>
-          <C0045622>{c0045623}</C0045622>
-          <C0045623>{c0045624}</C0045623>
-          <C0045624>{c0045625}</C0045624>
-          <C0045625>{c0045626}</C0045625>
-          <OverlapGroup>
-            <Processing>{processing1}</Processing>
-            <Rectangle359 />
-          </OverlapGroup>
-          <OverlapGroup1>
-            <Processing>{processing2}</Processing>
-            <Rectangle359 />
-          </OverlapGroup1>
-          <OverlapGroup2>
-            <Completed>{completed1}</Completed>
-            <Rectangle359 />
-          </OverlapGroup2>
-          <OverlapGroup3>
-            <Completed>{completed2}</Completed>
-            <Rectangle359 />
-          </OverlapGroup3>
-          <OverlapGroup4>
-            <Processing>{processing3}</Processing>
-            <Rectangle359 />
-          </OverlapGroup4>
-          <OverlapGroup5>
-            <Processing>{processing4}</Processing>
-            <Rectangle359 />
-          </OverlapGroup5>
-          <OverlapGroup6>
-            <Canceled>{canceled1}</Canceled>
-            <Rectangle359 />
-          </OverlapGroup6>
-          <OverlapGroup7>
-            <Canceled>{canceled2}</Canceled>
-            <Rectangle359 />
-          </OverlapGroup7>
-          <Price>{price1}</Price>
-          <Price1>{price2}</Price1>
-          <Price2>{price3}</Price2>
-          <Price3>{price4}</Price3>
-          <Price4>{price5}</Price4>
-          <Price5>{price6}</Price5>
-          <Price6>{price7}</Price6>
-          <Price7>{price8}</Price7>
-          <Apple>{apple}</Apple>
-          <Amazon>{amazon}</Amazon>
-          <AirBnb>{airbnb}</AirBnb>
-          <Adidas>{adidas1}</Adidas>
-          <Adidas1>{adidas2}</Adidas1>
-          <Ebay>{ebay}</Ebay>
-          <EastBay>{eastBay}</EastBay>
-          <Name>{name}</Name>
-        </Group8113>
-        <Group11>
-          <OverlapGroup8>
-            <LoadMore>{loadMore}</LoadMore>
-          </OverlapGroup8>
-        </Group11>
-        <Footer className={footerProps.className} />
+      <div className="container-center-horizontal">
+        <div className="my-orders screen">
+          <Header />
+          <FlexRow>
+            <Total25Orders>{total25Orders}</Total25Orders>
+            <SortBy>
+              <SortByAmount>{sortByAmount}</SortByAmount>
+              <IcChevron src={staticUrl + "/img/ic-chevron-2@2x.svg"} />
+            </SortBy>
+
+            {/* TODO filter */}
+            <Filter>
+              <Filter1>{filter}</Filter1>
+              <IcRoundFilterList src={staticUrl + "/img/ic-round-filter-list@2x.svg"} />
+            </Filter>
+
+          </FlexRow>
+          <Group8113>
+            <Amount>{amount}</Amount>
+            <CardType>{cardType}</CardType>
+            <Address>{address}</Address>
+            <Status>{status}</Status>
+            <Border />
+            <Border1 />
+            <Border2 />
+            <Border3 />
+            <Border4 />
+            <Border5 />
+            <Border6 />
+            <Border7 />
+            <Image1 />
+            <Image2 />
+            <C004560>{c0045601}</C004560>
+            <C0045601>{c0045602}</C0045601>
+            <C004562>{c0045621}</C004562>
+            <C0045621>{c0045622}</C0045621>
+            <C0045622>{c0045623}</C0045622>
+            <C0045623>{c0045624}</C0045623>
+            <C0045624>{c0045625}</C0045624>
+            <C0045625>{c0045626}</C0045625>
+            <OverlapGroup>
+              <Processing>{processing1}</Processing>
+              <Rectangle359 />
+            </OverlapGroup>
+            <OverlapGroup1>
+              <Processing>{processing2}</Processing>
+              <Rectangle359 />
+            </OverlapGroup1>
+            <OverlapGroup2>
+              <Completed>{completed1}</Completed>
+              <Rectangle359 />
+            </OverlapGroup2>
+            <OverlapGroup3>
+              <Completed>{completed2}</Completed>
+              <Rectangle359 />
+            </OverlapGroup3>
+            <OverlapGroup4>
+              <Processing>{processing3}</Processing>
+              <Rectangle359 />
+            </OverlapGroup4>
+            <OverlapGroup5>
+              <Processing>{processing4}</Processing>
+              <Rectangle359 />
+            </OverlapGroup5>
+            <OverlapGroup6>
+              <Canceled>{canceled1}</Canceled>
+              <Rectangle359 />
+            </OverlapGroup6>
+            <OverlapGroup7>
+              <Canceled>{canceled2}</Canceled>
+              <Rectangle359 />
+            </OverlapGroup7>
+            <Price>{price1}</Price>
+            <Price1>{price2}</Price1>
+            <Price2>{price3}</Price2>
+            <Price3>{price4}</Price3>
+            <Price4>{price5}</Price4>
+            <Price5>{price6}</Price5>
+            <Price6>{price7}</Price6>
+            <Price7>{price8}</Price7>
+            <Apple>{apple}</Apple>
+            <Amazon>{amazon}</Amazon>
+            <AirBnb>{airbnb}</AirBnb>
+            <Adidas>{adidas1}</Adidas>
+            <Adidas1>{adidas2}</Adidas1>
+            <Ebay>{ebay}</Ebay>
+            <EastBay>{eastBay}</EastBay>
+            <Name>{name}</Name>
+          </Group8113>
+          <Group11>
+            <OverlapGroup8>
+              <LoadMore>{loadMore}</LoadMore>
+            </OverlapGroup8>
+          </Group11>
+          <Footer className={footerProps.className} />
+        </div>
       </div>
-    </div>
   );
 }
 

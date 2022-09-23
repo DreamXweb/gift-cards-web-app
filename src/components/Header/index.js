@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import {
   InterMediumOnyx20px,
@@ -7,61 +7,53 @@ import {
   InterBoldOnyx24px,
   InterBlackOnyx30px, InterNormalBlack18px, Border1pxOnyx, Border4pxWhite,
 } from "../../styledMixins";
-import {staticUrl} from "../../App";
+import App, {MainContext, staticUrl} from "../../App";
 
-const loggedInPages = ['user-profile', 'my-orders', 'checkout-page', 'edit-profile'];
+function Header () {
 
-const isLoggedIn = () => {
-  for (let page of loggedInPages) {
-    if (window.location.href.indexOf(page) !== -1) {
-      return true;
-    }
-  }
-  return false;
-}
-
-function Header2(props) {
-  const { className } = props;
-
-  // TODO change it only in case of successful login
-  const [loggedIn] = useState(isLoggedIn());
+  // noinspection JSCheckFunctionSignatures
+  const {loggedIn, setLoggedIn} = useContext(MainContext);
 
   const signUpLogInButtons = <>
-    <OverlapGroup className="overlap-group-8">
-      <SignUp className="sign-up-1">Sign Up</SignUp>
+    <OverlapGroup onClick={() => window.location = App.homepage + '/registration'}>
+      <SignUp>Sign Up</SignUp>
     </OverlapGroup>
-    <OverlapGroup1 className="overlap-group1-3">
-      <LogIn className="log-in-1">Log In</LogIn>
+    <OverlapGroup1 onClick={() => window.location = App.homepage + '/log-in'}>
+      <LogIn>Log In</LogIn>
     </OverlapGroup1>
   </>
 
+  const logout = () => {
+    setLoggedIn(false);
+    window.location = App.homepage;
+  }
+
   const myProfileButtons = <>
-    <Placeholder className="placeholder-7" />
+    <Placeholder/>
+
+    {/* TODO open on avatar click, hide on somewhere else click */}
     <OverlapGroup3>
-      <MyProfile>My Profile</MyProfile>
-      <MyOrders>My Orders</MyOrders>
+      <MyProfile onClick={() => window.location = App.homepage + '/user-profile'}>My Profile</MyProfile>
+      <MyOrders onClick={() => window.location = App.homepage + '/my-orders'}>My Orders</MyOrders>
     </OverlapGroup3>
-    <IconoIrLogOut src={staticUrl + "/img/iconoir-log-out@2x.svg"} />
+
+    <IconoIrLogOut onClick={logout} src={staticUrl + "/img/iconoir-log-out@2x.svg"} />
   </>
 
   return (
-    <Header className={`header-5 ${className || ""}`}>
-      <FlexRow className="flex-row-7">
-        <Cardsicle className="cardsicle-2">GiftCards</Cardsicle>
-        <AboutUs className="about-us-2">About us</AboutUs>
-        <RefundAndCancellationPolicy className="refund-and-cancellation-policy-2">
-          Refund and Cancellation Policy
-        </RefundAndCancellationPolicy>
-        <FAQ className="faq-2">FAQ</FAQ>
-
-        {loggedIn ? myProfileButtons : signUpLogInButtons}
-
-      </FlexRow>
-      <GiftCardsContainer className="gift-cards-container">
-        <SellGiftCards className="sell-gift-cards-4">Sell Gift Cards</SellGiftCards>
-        <BuyGiftCards className="buy-gift-cards-4">Buy Gift Cards</BuyGiftCards>
-      </GiftCardsContainer>
-    </Header>
+      <HeaderContainer>
+        <FlexRow>
+          <Cardsicle onClick={() => window.location = App.homepage}>Cardsicle</Cardsicle>
+          <AboutUs onClick={() => window.notify('In development ... ')}>About us</AboutUs>
+          <RefundAndCancellationPolicy onClick={() => window.notify('In development ... ')}>Refund and Cancellation Policy</RefundAndCancellationPolicy>
+          <FAQ onClick={() => window.notify('In development ... ')}>FAQ</FAQ>
+          {loggedIn ? myProfileButtons : signUpLogInButtons}
+        </FlexRow>
+        <GiftCardsContainer>
+          <SellGiftCards onClick={() => window.location = App.homepage + '/sell-gift-cards-page'}>Sell Gift Cards</SellGiftCards>
+          <BuyGiftCards onClick={() => window.location = App.homepage + '/buy-gift-cards-page'}>Buy Gift Cards</BuyGiftCards>
+        </GiftCardsContainer>
+      </HeaderContainer>
   );
 }
 
@@ -89,6 +81,7 @@ const MyProfile = styled.div`
   letter-spacing: 0;
   line-height: 30px;
   white-space: nowrap;
+  cursor: pointer;
 `;
 
 const MyOrders = styled.div`
@@ -98,6 +91,7 @@ const MyOrders = styled.div`
   letter-spacing: 0;
   line-height: 30px;
   white-space: nowrap;
+  cursor: pointer;
 `;
 
 const Placeholder = styled.div`
@@ -114,9 +108,10 @@ const IconoIrLogOut = styled.img`
   height: 27px;
   margin-left: 16px;
   margin-bottom: 1px;
+  cursor: pointer;
 `;
 
-const Header = styled.div`
+const HeaderContainer = styled.div`
   width: 1312px;
   margin-top: 55px;
   margin-left: 12px;
@@ -124,11 +119,6 @@ const Header = styled.div`
   flex-direction: column;
   align-items: flex-start;
   min-height: 134px;
-
-  &.header-5.header-6 {
-    margin-top: unset;
-    margin-left: unset;
-  }
 `;
 
 const FlexRow = styled.div`
@@ -144,6 +134,7 @@ const Cardsicle = styled.div`
   margin-top: 1px;
   min-width: 161px;
   letter-spacing: 2.1px;
+  cursor: pointer;
 `;
 
 const AboutUs = styled.div`
@@ -153,6 +144,7 @@ const AboutUs = styled.div`
   margin-bottom: 1px;
   min-width: 86px;
   letter-spacing: 0;
+  cursor: pointer;
 `;
 
 const RefundAndCancellationPolicy = styled.div`
@@ -162,6 +154,7 @@ const RefundAndCancellationPolicy = styled.div`
   margin-left: 50px;
   margin-bottom: 2px;
   letter-spacing: 0;
+  cursor: pointer;
 `;
 
 const FAQ = styled.div`
@@ -171,6 +164,7 @@ const FAQ = styled.div`
   margin-bottom: 1px;
   min-width: 39px;
   letter-spacing: 0;
+  cursor: pointer;
 `;
 
 const OverlapGroup = styled.div`
@@ -182,6 +176,7 @@ const OverlapGroup = styled.div`
   min-width: 111px;
   background-color: var(--granite-gray);
   border-radius: 12px;
+  cursor: pointer;
 `;
 
 const SignUp = styled.div`
@@ -200,6 +195,7 @@ const OverlapGroup1 = styled.div`
   align-items: flex-start;
   min-width: 111px;
   border-radius: 12px;
+  cursor: pointer;
 `;
 
 const LogIn = styled.div`
@@ -224,6 +220,7 @@ const SellGiftCards = styled.div`
   width: 169px;
   min-height: 29px;
   letter-spacing: 0;
+  cursor: pointer;
 `;
 
 const BuyGiftCards = styled.div`
@@ -231,6 +228,7 @@ const BuyGiftCards = styled.div`
   min-height: 29px;
   margin-left: 50px;
   letter-spacing: 0;
+  cursor: pointer;
 `;
 
-export default Header2;
+export default Header;
