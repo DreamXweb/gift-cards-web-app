@@ -1,6 +1,6 @@
 {
-  "homepage": "/cardsicle/my_build",
-  "name": "react-package",
+  "homepage": "/cardsicle/build",
+  "name": "cardsicle",
   "scripts": {
     "start": "react-scripts start",
     "build": "webpack"

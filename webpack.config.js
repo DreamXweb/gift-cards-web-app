@@ -10,7 +10,7 @@ module.exports = () => {
 
     process.env.NODE_ENV = 'development';
 
-    let outFolder = 'my_build';
+    let outFolder = 'build';
 
     return {
         plugins: [
